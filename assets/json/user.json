@@ -1,0 +1,18 @@
+[{
+    "login": "amdy",
+    "password": "cohorte3",
+    "role": "joueur",
+    "nom": "diop",
+    "prenom": "amdy",
+    "photo": "../../assets/Images/user/amdy diop.jpeg"
+
+}, {
+    "login": "admin",
+    "password": "admin",
+    "role": "admin",
+    "nom": "diop",
+    "prenom": "amdy",
+    "photo": "../../assets/Images/user/amdy.jpg"
+
+
+}]

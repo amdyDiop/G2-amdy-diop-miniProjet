@@ -1,120 +1,131 @@
-                        .header {
-                            width: 100%;
-                            height: 68px;
-                            background-color: #042425;
-                            text-align: center;
-                            font-size: 34px;
-                            font-family: none;
-                            line-height: 78px;
-                            color: white;
-                        }
-                        
-                        .logo {
-                            float: left;
-                            width: 58px;
-                            height: 71px;
-                        }
-                        
-                        body {
-                            background-color: #999999;
-                        }
-                        
-                        .global {
-                            width: 70%;
-                            height: 603px;
-                            margin-left: 15%;
-                            margin-right: 15%;
-                            border: solid;
-                            border-color: white;
-                        }
-                        
-                        .content {
-                            padding-top: 10%;
-                            width: 100%;
-                            height: 435px;
-                            background-image: url(../Images/img-bg.jpg);
-                        }
-                        /*  login css   */
-                        
-                        .login {
-                            padding-top: 0%;
-                            margin-left: 25%;
-                            margin-right: 25%;
-                            height: 306px;
-                            width: 50%;
-                        }
-                        
-                        .loginHeader {
-                            line-height: 50px;
-                            width: 100%;
-                            text-align: left;
-                            height: 65px;
-                            font-size: large;
-                            text-decoration: none;
-                            color: white;
-                            background-color: #51bfd0;
-                        }
-                        
-                        .loginContent {
-                            width: 100%;
-                            height: 245px;
-                            background-color: rgb(240, 238, 238);
-                        }
-                        
-                        .inputLogin {
-                            font-size: 15px;
-                            background-color: #e6e3e3;
-                            background-image: url('../Images/Icônes/ic-login.png');
-                            background-position: 95%;
-                            background-repeat: no-repeat;
-                            border: none;
-                            padding-left: 5%;
-                            margin-top: 5%;
-                            height: 45px;
-                            width: 85%;
-                            margin-left: 5%;
-                            margin-right: 5%;
-                        }
-                        
-                        .inputPassword {
-                            font-size: 15px;
-                            background-color: #e6e3e3;
-                            background-image: url('../Images/Icônes/ic-password.png');
-                            background-position: 95%;
-                            background-repeat: no-repeat;
-                            padding-left: 5%;
-                            margin-top: 5%;
-                            margin-bottom: 5%;
-                            height: 45px;
-                            width: 85%;
-                            border: none;
-                            margin-left: 5%;
-                            margin-right: 5%;
-                        }
-                        
-                         ::placeholder {
-                            margin-left: 15%;
-                        }
-                        
-                        a {
-                            text-decoration: none;
-                        }
-                        
-                        .submit {
-                            color: white;
-                            text-decoration: none;
-                            width: 24%;
-                            margin-left: 5%;
-                            height: 44px;
-                            font-size: 12px;
-                            background-color: #51bfd0;
-                        }
-                        
-                        .inscrir {
-                            color: rgb(160, 158, 158);
-                            border: none;
-                            width: 40%;
-                            margin-left: 5%;
-                            height: 44px;
-                            font-size: 14px;
-                        }
+                    .header {
+                        width: 100%;
+                        height: 68px;
+                        background-color: #042425;
+                        text-align: center;
+                        font-size: 34px;
+                        font-family: none, sans-serif;
+                        line-height: 78px;
+                        color: white;
+                    }
+                    
+                    .logo {
+                        float: left;
+                        width: 58px;
+                        height: 71px;
+                    }
+                    
+                    body {
+                        background-color: #999999;
+                    }
+                    
+                    .global {
+                        width: 70%;
+                        height: 603px;
+                        margin-left: 15%;
+                        margin-right: 15%;
+                        border: solid;
+                        border-color: white;
+                    }
+                    
+                    .content {
+                        padding-top: 10%;
+                        width: 100%;
+                        height: 435px;
+                        background-image: url(../Images/img-bg.jpg);
+                    }
+                    /*  login css   */
+                    
+                    .login {
+                        padding-top: 0%;
+                        margin-left: 25%;
+                        margin-right: 25%;
+                        height: 306px;
+                        width: 50%;
+                    }
+                    
+                    .loginHeader {
+                        line-height: 50px;
+                        width: 100%;
+                        text-align: left;
+                        height: 65px;
+                        font-size: large;
+                        text-decoration: none;
+                        color: white;
+                        background-color: #51bfd0;
+                    }
+                    
+                    .loginContent {
+                        width: 100%;
+                        height: 245px;
+                        background-color: rgb(240, 238, 238);
+                    }
+                    
+                    .inputLogin {
+                        font-size: 15px;
+                        background-color: #e6e3e3;
+                        background-image: url('../Images/Icônes/ic-login.png');
+                        background-position: 95%;
+                        background-repeat: no-repeat;
+                        border: none;
+                        padding-left: 5%;
+                        margin-top: 5%;
+                        height: 45px;
+                        width: 85%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                    }
+                    
+                    .inputPassword {
+                        font-size: 15px;
+                        background-color: #e6e3e3;
+                        background-image: url('../Images/Icônes/ic-password.png');
+                        background-position: 95%;
+                        background-repeat: no-repeat;
+                        padding-left: 5%;
+                        margin-top: 5%;
+                        margin-bottom: 5%;
+                        height: 45px;
+                        width: 85%;
+                        border: none;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                    }
+                    
+                     ::placeholder {
+                        margin-left: 15%;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                    }
+                    
+                    .submit {
+                        color: white;
+                        text-decoration: none;
+                        width: 24%;
+                        margin-left: 5%;
+                        height: 44px;
+                        font-size: 12px;
+                        background-color: #51bfd0;
+                    }
+                    
+                    .inscrir {
+                        color: rgb(160, 158, 158);
+                        border: none;
+                        width: 40%;
+                        margin-left: 5%;
+                        height: 44px;
+                        font-size: 14px;
+                    }
+                    
+                    .errorLog {
+                        color: red;
+                        margin-left: 6%;
+                    }
+                    
+                    .errorPassword {
+                        color: red;
+                        margin-left: 6%;
+                        margin-top: -3%;
+                    }
