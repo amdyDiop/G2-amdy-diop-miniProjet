@@ -7,7 +7,7 @@ function connex( $login, $password)
     $db = json_decode($db);
     $teste = 0;
     for ($i = 0; $i < count($db); $i++) {
-        if (strcmp($db[$i]->login, $_POST['login']) == 0 && strcmp($db[$i]->password, $_POST['password']) == 0) {
+        if (strcmp($db[$i]->login, $login) == 0 && strcmp($db[$i]->password, $password) == 0) {
             $teste = 1;
             break;
         }
@@ -28,20 +28,22 @@ function getUser($login,$password){
                 return $db[$i];
               }
     }
+    return null ;
 }
 
-function getRole($login,$password){
+function redirect($login,$password){
     $files = './assets/json/user.json';
     $db = file_get_contents($files);
     $db = json_decode($db);
     for ($i = 0; $i < count($db); $i++) {
         if (strcmp($db[$i]->login,$login) == 0 && strcmp($db[$i]->password, $password) == 0 && strcmp($db[$i]->role,"admin") == 0) {
-           return "admin";
+            header('Location: ./src/template/admin.php ');
         }
         if (strcmp($db[$i]->login,$login) == 0 && strcmp($db[$i]->password, $password) == 0 && strcmp($db[$i]->role,"joueur") == 0) {
-           return "joueur";      
+            header('Location: ./src/template/joueur.php ');   
         }
     }
+    
 }
 
 ?>
