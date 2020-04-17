@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(empty( $_SESSION['user']))
+if(empty($_SESSION['user']))
     header('Location: ../../../index.php');
 
 if (!empty($_POST['deconnexion'])) {
@@ -9,17 +9,19 @@ if (!empty($_POST['deconnexion'])) {
 
 }
 
-if (isset($_POST['listeJoueur'])) {
-
-    $_SESSION['url'] = "listeJoueur.php";
-
-} elseif (isset($_POST['listeQuestion'])) {
-
-    $_SESSION['url'] = "listeQuestion.php";
-
-} elseif (isset($_POST['creeAdmin'])) {
-
-    $_SESSION['url'] = "newAdmin.php";
+if (isset($_GET['page'])) {
+    if($_GET['page']=="listeQuestion"){
+        $_SESSION['url'] = "listeQuestion.php";
+    }
+    else if($_GET['page']=="newAdmin"){
+        $_SESSION['url'] = "newAdmin.php";
+    }
+    else if($_GET['page']=="listQuestion"){
+        $_SESSION['url'] = "listQuestion.php";
+    }
+    else if($_GET['page']=="newQuestion"){
+        $_SESSION['url'] = "newQuestion.php";
+    }
 
 }
 
@@ -67,42 +69,24 @@ if (isset($_POST['listeJoueur'])) {
                     <ul>
 
                         <li class="navBar">
-                            <form method="post">
-                                <a class="" href=""> Liste Questions
-                                    <div class="iconListe"><input type="submit" value="" id="" name="listeQuestion"
-                                                                  class="href_ButonON"/></div>
+                                <a class="" href="admin.php?page=listeQuestion"> Liste Question
+                                    <div class="iconListe"></div>
                                 </a>
-
-                            </form>
                         </li>
                         <li class="navBar">
-                            <form method="post">
-                                <a href=""> Créer Admin
-                                    <input type="submit" name="creeAdmin" value="">
+                                <a href="admin.php?page=newAdmin" > Créer Admin
                                     <div class="iconAdd"></div>
                                 </a>
-                            </form>
                         </li>
                         <li class="navBar">
-                            <form method="post">
-                                <a href=""> Liste joueur
-
-                                    <input type="submit" name="listeJoueur" value="">
+                                <a href="admin.php?page=listeJoueur" > Liste joueur
                                     <div class="iconListeActive"></div>
                                 </a>
-
-                            </form>
-
                         </li>
                         <li class="navBar">
-                            <form method="post">
-                                <a href=""> Créer Questions
-
-                                    <input type="submit" name="newQuestion" value="">
+                                <a href="admin.php?page=newQuestion"> Créer Questions
                                     <div class="iconAdd"></div>
                                 </a>
-                            </form>
-
                         </li>
 
                     </ul>
@@ -115,20 +99,31 @@ if (isset($_POST['listeJoueur'])) {
             ?>
         </div>
     </div>
-    <script>
-        function click(id) {
-            var reponse = document.getElementById(id);
-            var nbReponse = document.getElementById('nbInput').value;
-            reponse.innerHTML += ndex + '" value="">  </div> </div>;
 
-
-            /**  var x = document.createElement("INPUT");
-             x.setAttribute("type", "text");
-             x.setAttribute("value", "input gaye am fii ");
-             x.setAttribute("name", "input gaye am fii");
-             document.body.appendChild(x);
-             compteur++;*/
-        }
-    </script>
 </body>
+<script src="../../../assets/js/fonction.js">
+    function listeQ() {
+        alert("listq");
+        var listeQuestion  = document.forms["listeQuestion"]["listeQuestion"].value;
+        if (listeQuestion === "") {
+            <?php
+            $_SESSION['url'] = "listeQuestion.php";
+            ?>
+
+            return false;
+        }
+    }
+    function listeJ() {
+        var listeQuestion  = document.forms["listeJoueur"]["listeJoueur"].value;
+        if (listeQuestion === "") {
+            <?php
+            $_SESSION['url'] = "listeJoueur.php";
+            ?>
+            alert("listq");
+            return false;
+        }
+    }
+
+
+</script>
 </html>
