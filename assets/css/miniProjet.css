@@ -1,131 +1,629 @@
-                    .header {
-                        width: 100%;
-                        height: 68px;
-                        background-color: #042425;
-                        text-align: center;
-                        font-size: 34px;
-                        font-family: none, sans-serif;
-                        line-height: 78px;
-                        color: white;
-                    }
-                    
-                    .logo {
-                        float: left;
-                        width: 58px;
-                        height: 71px;
-                    }
-                    
-                    body {
-                        background-color: #999999;
-                    }
-                    
-                    .global {
-                        width: 70%;
-                        height: 603px;
-                        margin-left: 15%;
-                        margin-right: 15%;
-                        border: solid;
-                        border-color: white;
-                    }
-                    
-                    .content {
-                        padding-top: 10%;
-                        width: 100%;
-                        height: 435px;
-                        background-image: url(../Images/img-bg.jpg);
-                    }
-                    /*  login css   */
-                    
-                    .login {
-                        padding-top: 0%;
-                        margin-left: 25%;
-                        margin-right: 25%;
-                        height: 306px;
-                        width: 50%;
-                    }
-                    
-                    .loginHeader {
-                        line-height: 50px;
-                        width: 100%;
-                        text-align: left;
-                        height: 65px;
-                        font-size: large;
-                        text-decoration: none;
-                        color: white;
-                        background-color: #51bfd0;
-                    }
-                    
-                    .loginContent {
-                        width: 100%;
-                        height: 245px;
-                        background-color: rgb(240, 238, 238);
-                    }
-                    
-                    .inputLogin {
-                        font-size: 15px;
-                        background-color: #e6e3e3;
-                        background-image: url('../Images/Icônes/ic-login.png');
-                        background-position: 95%;
-                        background-repeat: no-repeat;
-                        border: none;
-                        padding-left: 5%;
-                        margin-top: 5%;
-                        height: 45px;
-                        width: 85%;
-                        margin-left: 5%;
-                        margin-right: 5%;
-                    }
-                    
-                    .inputPassword {
-                        font-size: 15px;
-                        background-color: #e6e3e3;
-                        background-image: url('../Images/Icônes/ic-password.png');
-                        background-position: 95%;
-                        background-repeat: no-repeat;
-                        padding-left: 5%;
-                        margin-top: 5%;
-                        margin-bottom: 5%;
-                        height: 45px;
-                        width: 85%;
-                        border: none;
-                        margin-left: 5%;
-                        margin-right: 5%;
-                    }
-                    
-                     ::placeholder {
-                        margin-left: 15%;
-                    }
-                    
-                    a {
-                        text-decoration: none;
-                    }
-                    
-                    .submit {
-                        color: white;
-                        text-decoration: none;
-                        width: 24%;
-                        margin-left: 5%;
-                        height: 44px;
-                        font-size: 12px;
-                        background-color: #51bfd0;
-                    }
-                    
-                    .inscrir {
-                        color: rgb(160, 158, 158);
-                        border: none;
-                        width: 40%;
-                        margin-left: 5%;
-                        height: 44px;
-                        font-size: 14px;
-                    }
-                    
-                    .errorLog {
-                        color: red;
-                        margin-left: 6%;
-                    }
-                    
-                    .errorPassword {
-                        color: red;
-                        margin-left: 6%;
-                        margin-top: -3%;
-                    }
+.header {
+    width: 100%;
+    height: 68px;
+    background-color: #042425;
+    text-align: center;
+    font-size: 34px;
+    font-family: none, sans-serif;
+    line-height: 78px;
+    color: white;
+}
+
+.logo {
+    float: left;
+    width: 58px;
+    height: 71px;
+}
+
+body {
+    background-color: #999999;
+}
+
+.global {
+    width: 70%;
+    height: 598px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: solid;
+    border-color: white;
+}
+
+.content {
+    padding-top: 10%;
+    width: 100%;
+    height: 437px;
+    background-image: url(../Images/img-bg.jpg);
+
+}
+
+/*  login css   */
+
+.login {
+    padding-top: 0%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 306px;
+    width: 50%;
+}
+
+.loginHeader {
+    line-height: 50px;
+    width: 100%;
+    text-align: left;
+    height: 65px;
+    font-size: large;
+    text-decoration: none;
+    color: white;
+    background-color: #51bfd0;
+}
+
+.loginContent {
+    width: 100%;
+    height: 245px;
+    background-color: rgb(240, 238, 238);
+}
+
+.inputLogin {
+    font-size: 15px;
+    background-color: #e6e3e3;
+    background-image: url('../Images/Icônes/ic-login.png');
+    background-position: 95%;
+    background-repeat: no-repeat;
+    border: none;
+    padding-left: 5%;
+    margin-top: 5%;
+    height: 45px;
+    width: 85%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.inputPassword {
+    font-size: 15px;
+    background-color: #e6e3e3;
+    background-image: url('../Images/Icônes/ic-password.png');
+    background-position: 95%;
+    background-repeat: no-repeat;
+    padding-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 45px;
+    width: 85%;
+    border: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+::placeholder {
+    margin-left: 15%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.submit {
+    color: white;
+    text-decoration: none;
+    width: 24%;
+    margin-left: 5%;
+    height: 44px;
+    font-size: 12px;
+    background-color: #51bfd0;
+}
+
+.inscrir {
+    color: rgb(160, 158, 158);
+    border: none;
+    width: 40%;
+    margin-left: 5%;
+    height: 44px;
+    font-size: 14px;
+}
+
+.errorLog {
+    color: red;
+    margin-left: 6%;
+}
+
+.errorPassword {
+    color: red;
+    margin-left: 6%;
+    margin-top: -3%;
+}
+
+/**-----------------------------------------------css admin const---------------------------------------------------*/
+.globalAdmin {
+    margin-top: -9%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #f2f2f2;
+    height: 515px;
+}
+
+.headerAdmin {
+    width: 100%;
+    height: 66px;
+    background-color: #51bfd0;
+    text-transform: uppercase;
+    color: white;
+    line-height: 70px;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.deconnexion {
+    border-radius: 3%;
+    float: right;
+    margin-right: 3%;
+    margin-top: -5.9%;
+    width: 14%;
+    height: 30px;
+    text-transform: none;
+    line-height: 23px;
+    background-color: #3addd5;
+    color: #f8f5f5;
+}
+
+.texteAdmin {
+    text-align: center;
+}
+
+.menu {
+    float: left;
+    background-color: white;
+    margin-top: 4%;
+    margin-left: 1%;
+    width: 36%;
+    height: auto;
+
+}
+
+.headerMenu {
+    padding-top: 1%;
+    background: linear-gradient(to top, #51bfd0 0%, #f9fdfd 100%);
+    width: 100%;
+    height: 113px;
+    margin-bottom: 0.1%;
+}
+
+.divUI {
+    margin-top: 2%;
+}
+
+.userImg {
+    padding: 1.5%;
+    margin-left: 7%;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: groove;
+}
+
+.nom {
+    width: 57%;
+    text-transform: uppercase;
+    color: white;
+    font-size: 17px;
+    height: 23px;
+    margin-left: 40%;
+    margin-top: -25%;
+}
+
+.prenom {
+    width: 47%;
+    text-transform: uppercase;
+    color: white;
+    font-size: 17px;
+    height: 23px;
+    margin-left: 48%;
+    margin-top: -2%;
+
+}
+
+.menuItem {
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+}
+
+.navBar {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding-left: 5%;
+    line-height: 34px;
+    width: 95%;
+    height: 34px;
+    color: #999999;
+    font-size: 20px;
+    font-family: none sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*width: 200px*/;
+
+}
+
+li a {
+
+    display: block;
+    color: #5f5f5f;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: green;
+    width: 2%;
+    height: 12px;
+    border: groove;
+    color: #48ae52;
+}
+
+li a:hover:not(.active) {
+    background-color: #f8f3f0;
+    color: #aeaeae;
+}
+
+.iconAdd {
+    margin-top: 2%;
+    margin-right: 5%;
+    background-size: cover;
+    background-image: url("../../assets/Images/Icônes/ic-ajout.png");
+    background-repeat: no-repeat;
+    float: right;
+    width: 24px;
+    height: 24px;
+}
+
+.iconListeActive {
+    margin-top: 2%;
+    margin-right: 5%;
+    background-image: url("../../assets/Images/Icônes/ic-liste-active.png");
+    background-repeat: no-repeat;
+    float: right;
+    width: 24px;
+    height: 24px;
+
+}
+
+.iconListe {
+    margin-right: 5%;
+    margin-top: 2%;
+    background-image: url("../../assets/Images/Icônes/ic-liste.png");
+    background-repeat: no-repeat;
+    float: right;
+    width: 24px;
+    height: 24px;
+
+}
+
+.rightContent {
+    margin-top: 1%;
+    margin-left: 2%;
+    float: left;
+    background-color: white;
+    width: 45%;
+    height: 428px;
+}
+
+.textListJoueur {
+    margin-top: 3%;
+    margin-left: 18%;
+    text-align: center;
+    font-size: 21px;
+    color: #5f5f5f;
+    width: 60%;
+    height: 34px;
+}
+.tabList{
+    margin-top: -2%;
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: center;
+    font-size: 21px;
+    border: solid;
+    border-radius: 3%;
+    border-width: 1px;
+    border-color: #51bfd0;
+    width: 85%;
+    height: 344px
+}
+table{
+    width: 100%;
+    margin-left: -4%;
+    font-family: "myriad pro", serif;
+}
+.suivant{
+    border-radius: 1.4%;
+    float: right;
+    margin-right: 9%;
+    margin-top: 1%;
+    width: 24%;
+    height: 30px;
+    text-transform: none;
+    line-height: 23px;
+    background-color: #3addd5;
+    color: #f8f5f5;
+}
+/*----------------------------------------------content question liste-----------------------------------------------------------------------------*/
+.contentListQuestion{
+    margin-top: 1%;
+    margin-left: 2%;
+    float: left;
+    background-color: white;
+    width: 58%;
+    border: groove;
+    height: 428px;
+
+}
+.borderIn{
+
+    margin-left: 5%;
+    border: solid;
+    border-radius: 3%;
+    border-width: 1px;
+    border-color: #51bfd0;
+    width: 90%;
+    height: 344px;
+    font-family: "myriad pro", serif;
+}
+.nbQuestion {
+    position: absolute;
+    margin-left: 16%;
+    width: 4%;
+    height: 23px;
+    margin-top: -1.98%;
+
+}
+.ok {
+    position: absolute;
+    margin-left: 22%;
+    width: 3%;
+    height: 26px;
+    margin-top: -2%;
+    background-color: #5e90af;
+
+}
+.textNbQuestion{
+    margin-top: 3.5%;
+    margin-left: 18%;
+    /*text-align: center;*/
+    font-size: 18px;
+    color: #5f5f5f;
+    width:76%;
+    height: 34px;
+
+}
+.line{
+
+    width: 100%;
+    height: 34px;
+}
+.texte{
+    line-height: 28px;
+    margin-left: 10%;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+}
+.questioncontent{
+    margin-top: 0.5%;
+    width: 100%;
+    height: auto;
+
+
+}
+.question {
+    margin-left: 1.5%;
+    width: 98%;
+    font-size: 17px;
+    height: auto;
+
+}
+
+checkbox{
+    width: 8%;
+    font-size: 12px;
+    height: 10px;
+    border-color: #51bfd0;
+    margin-bottom: -3%;
+    background-color:#51bfd0 ;
+}
+input[type="checkbox" i] {
+    background-color: #51bfd0;
+    width: 8%;
+    font-size: 12px;
+    height: 10px;
+    color: #51bfd0;
+    margin: 5px -14px -5% 8px;
+    padding: 0.5px;
+    top: .05px;
+    left: .5px;
+    line-height: 0;
+}
+input[type="radio" i] {
+    background-color: #51bfd0;
+    width: 8%;
+    font-size: 12px;
+    height: 10px;
+    color: #51bfd0;
+    margin: 5px -14px -5% 8px;
+    padding: 0.5px;
+    top: .05px;
+    left: .5px;
+    line-height: 0;
+}
+.inputReponse{
+    width: 28%;
+    margin-left:5% ;
+    font-size: 12px;
+    height:22px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+/*--------------------------------------------------content add admin----------------------------------------------------------------------------------*/
+
+.contentaddAdmin{
+    margin-top: 1%;
+    margin-left: 2%;
+    float: left;
+    background-color: white;
+    width: 58%;
+    border-radius: 2%;
+color:  #5f5f5f;
+    height: 386px;
+}
+.sousTexte{
+color:  #5f5f5f;
+    width: 30%;
+    height: 24px;
+    font-size: 12px;
+    padding-left: 3%;
+
+}
+.texteInsc{
+    color: #5f5f5f;
+    width: 40%;
+    height: 24px;
+    font-size: 22px;
+    padding-left: 3%;
+}
+hr {
+    float: left;
+    width:60%;
+   background-color:  #5f5f5f;
+}
+
+.addminImg {
+    margin-top: -6%;
+    float: right;
+    margin-right: 5%;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: groove #51bfd0;
+}
+.adminAdd{
+    padding-left: 3%;
+    float: left;
+    margin-top: -1%;
+    width:50%;
+    height: 87%;
+
+
+}
+.texteAvatar{
+
+margin-right:3% ;
+    margin-top: 1%;
+text-align: center;
+    float: right;
+    font-size: medium;
+    width: 30%;
+
+}
+label{
+    font-size: 82%;
+    margin-bottom: 3%;
+    width: 97%
+}
+.input{
+    width: 100%;
+    height: 8%;
+    border-radius: 2%;
+}
+.inputfile{
+    color: white;
+    float: right;
+    width: 44%;
+    height: 8%;
+    border-radius: 2%;
+    background-color: #51bfd0;
+}
+.buttonValider{
+    margin-left: 23%;
+    width: 45%;
+    height: 8%;
+    background-color: #51bfd0;
+    border-radius: 2%;
+    color: white;
+}
+/*------------------------------------------css new player-----------------------------------------------------------------------------------------*/
+
+.contentNewJoueur {
+    margin-top: -11%;
+    margin-left: 11%;
+    /* float: left; */
+    background-color: white;
+    width: 78%;
+    border-radius: 2%;
+    color: #5f5f5f;
+    height: 519px;
+}
+.texteInscJoueur {
+    margin-top: 2%;
+    font-family: inherit;
+    color: #5f5f5f;
+    width: 45%;
+    height: 33px;
+    font-size: 30px;
+    padding-left: 3%;
+}
+.sousTextejoueur{
+
+    color: #5f5f5f;
+    width: 42%;
+    height: 15px;
+    font-size: 16px;
+    padding-left: 3%;
+}
+.inputJoueur{
+    width: 110%;
+    height: 11%;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+.labelJoueur{
+    font-size: 14px;
+    margin-bottom: 10%;
+    width: 99%;
+}
+.joueurImg {
+    margin-top: -6%;
+    float: right;
+    margin-right: 5%;
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    border: groove #51bfd0;
+}
+.hr {
+    float: left;
+    width:65%;
+    background-color:  #5f5f5f;
+}
