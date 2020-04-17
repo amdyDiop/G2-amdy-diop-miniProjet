@@ -1,8 +1,10 @@
 <?php
-include './src/controller/fonction.php';
+
+
+session_start();
 $error = "";
 $_SESSION['user'] = [];
-session_start();
+include ('src/controller/fonction.php');
 $_SESSION['nom'] = "amdy";
 if (!empty($_POST['connexion'])) {
     if (isset($_POST['login']) && isset($_POST['password'])) {
@@ -11,10 +13,10 @@ if (!empty($_POST['connexion'])) {
         if (connex($login, $password) == 1) {
             if (strcmp(getRole($login, $password), "admin") == 0) {
                 $_SESSION['user'] = getUser($login, $password);
-                header('Location: ./src/template/admin.php ');
+                header('Location: ./src/template/admin/admin.php ');
             } elseif (strcmp(getRole($login, $password), "joueur") == 0) {
                 $_SESSION['user'] = getUser($login, $password);
-                header('Location: ./src/template/joueur.php ');
+                header('Location: ./src/template/joueur/joueur.php ');
             }
         } else {
             $error = "login ou mot de passe incorrect";
@@ -34,7 +36,6 @@ if (!empty($_POST['connexion'])) {
 </head>
 <?php
 ?>
-
 <body>
 <div class="global">
     <div class="header">
@@ -52,7 +53,7 @@ if (!empty($_POST['connexion'])) {
                     <input class="inputPassword" type="password" name="password" placeholder=" Password">
                     <div class="errorPassword"> <?= $error ?></div>
                     <input class="submit" type="submit" value="Connexion" name="connexion">
-                    <a class="inscrir" href="">S'inscrire pour jouer? </a>
+                    <a class="inscrir" href="src/template/joueur/inscription.php">S'inscrire pour jouer? </a>
                 </form>
 
             </div>

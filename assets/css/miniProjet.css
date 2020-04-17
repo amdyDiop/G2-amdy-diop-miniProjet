@@ -145,7 +145,6 @@ a {
     width: 100%;
     height: 66px;
     background-color: #51bfd0;
-
     text-transform: uppercase;
     color: white;
     line-height: 70px;
@@ -328,10 +327,8 @@ li a:hover:not(.active) {
     border-color: #51bfd0;
     width: 85%;
     height: 344px
-
 }
 table{
-
     width: 100%;
     margin-left: -4%;
     font-family: "myriad pro", serif;
@@ -347,4 +344,283 @@ table{
     line-height: 23px;
     background-color: #3addd5;
     color: #f8f5f5;
+}
+/*----------------------------------------------content question liste-----------------------------------------------------------------------------*/
+.contentListQuestion{
+    margin-top: 1%;
+    margin-left: 2%;
+    float: left;
+    background-color: white;
+    width: 58%;
+    border: groove;
+    height: 428px;
+
+}
+.borderIn{
+
+    margin-left: 5%;
+    border: solid;
+    border-radius: 3%;
+    border-width: 1px;
+    border-color: #51bfd0;
+    width: 90%;
+    height: 344px;
+    font-family: "myriad pro", serif;
+}
+.nbQuestion {
+    position: absolute;
+    margin-left: 16%;
+    width: 4%;
+    height: 23px;
+    margin-top: -1.98%;
+
+}
+.ok {
+    position: absolute;
+    margin-left: 22%;
+    width: 3%;
+    height: 26px;
+    margin-top: -2%;
+    background-color: #5e90af;
+
+}
+.textNbQuestion{
+    margin-top: 3.5%;
+    margin-left: 18%;
+    /*text-align: center;*/
+    font-size: 18px;
+    color: #5f5f5f;
+    width:76%;
+    height: 34px;
+
+}
+.line{
+
+    width: 100%;
+    height: 34px;
+}
+.texte{
+    line-height: 28px;
+    margin-left: 10%;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+}
+.questioncontent{
+    margin-top: 0.5%;
+    width: 100%;
+    height: auto;
+
+
+}
+.question {
+    margin-left: 1.5%;
+    width: 98%;
+    font-size: 17px;
+    height: auto;
+
+}
+
+checkbox{
+    width: 8%;
+    font-size: 12px;
+    height: 10px;
+    border-color: #51bfd0;
+    margin-bottom: -3%;
+    background-color:#51bfd0 ;
+}
+input[type="checkbox" i] {
+    background-color: #51bfd0;
+    width: 8%;
+    font-size: 12px;
+    height: 10px;
+    color: #51bfd0;
+    margin: 5px -14px -5% 8px;
+    padding: 0.5px;
+    top: .05px;
+    left: .5px;
+    line-height: 0;
+}
+input[type="radio" i] {
+    background-color: #51bfd0;
+    width: 8%;
+    font-size: 12px;
+    height: 10px;
+    color: #51bfd0;
+    margin: 5px -14px -5% 8px;
+    padding: 0.5px;
+    top: .05px;
+    left: .5px;
+    line-height: 0;
+}
+.inputReponse{
+    width: 28%;
+    margin-left:5% ;
+    font-size: 12px;
+    height:22px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+/*--------------------------------------------------content add admin----------------------------------------------------------------------------------*/
+
+.contentaddAdmin{
+    margin-top: 1%;
+    margin-left: 2%;
+    float: left;
+    background-color: white;
+    width: 58%;
+    border-radius: 2%;
+color:  #5f5f5f;
+    height: 386px;
+}
+.sousTexte{
+color:  #5f5f5f;
+    width: 30%;
+    height: 24px;
+    font-size: 12px;
+    padding-left: 3%;
+
+}
+.texteInsc{
+    color: #5f5f5f;
+    width: 40%;
+    height: 24px;
+    font-size: 22px;
+    padding-left: 3%;
+}
+hr {
+    float: left;
+    width:60%;
+   background-color:  #5f5f5f;
+}
+
+.addminImg {
+    margin-top: -6%;
+    float: right;
+    margin-right: 5%;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: groove #51bfd0;
+}
+.adminAdd{
+    padding-left: 3%;
+    float: left;
+    margin-top: -1%;
+    width:50%;
+    height: 87%;
+
+
+}
+.texteAvatar{
+
+margin-right:3% ;
+    margin-top: 1%;
+text-align: center;
+    float: right;
+    font-size: medium;
+    width: 30%;
+
+}
+label{
+    font-size: 82%;
+    margin-bottom: 3%;
+    width: 97%
+}
+.input{
+    width: 100%;
+    height: 8%;
+    border-radius: 2%;
+}
+.inputfile{
+    color: white;
+    float: right;
+    width: 44%;
+    height: 8%;
+    border-radius: 2%;
+    background-color: #51bfd0;
+}
+.buttonValider{
+    margin-left: 23%;
+    width: 45%;
+    height: 8%;
+    background-color: #51bfd0;
+    border-radius: 2%;
+    color: white;
+}
+/*------------------------------------------css new player-----------------------------------------------------------------------------------------*/
+
+.contentNewJoueur {
+    margin-top: -11%;
+    margin-left: 11%;
+    /* float: left; */
+    background-color: white;
+    width: 78%;
+    border-radius: 2%;
+    color: #5f5f5f;
+    height: 519px;
+}
+.texteInscJoueur {
+    margin-top: 2%;
+    font-family: inherit;
+    color: #5f5f5f;
+    width: 45%;
+    height: 33px;
+    font-size: 30px;
+    padding-left: 3%;
+}
+.sousTextejoueur{
+
+    color: #5f5f5f;
+    width: 42%;
+    height: 15px;
+    font-size: 16px;
+    padding-left: 3%;
+}
+.inputJoueur{
+    width: 110%;
+    height: 11%;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+.labelJoueur{
+    font-size: 14px;
+    margin-bottom: 10%;
+    width: 99%;
+}
+.joueurImg {
+    margin-top: -6%;
+    float: right;
+    margin-right: 5%;
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    border: groove #51bfd0;
+}
+.hr {
+    float: left;
+    width:65%;
+    background-color:  #5f5f5f;
 }

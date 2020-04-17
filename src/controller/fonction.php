@@ -31,19 +31,18 @@ function getUser($login,$password){
     return null ;
 }
 
-function redirect($login,$password){
+function getRole($login,$password){
     $files = './assets/json/user.json';
     $db = file_get_contents($files);
     $db = json_decode($db);
     for ($i = 0; $i < count($db); $i++) {
         if (strcmp($db[$i]->login,$login) == 0 && strcmp($db[$i]->password, $password) == 0 && strcmp($db[$i]->role,"admin") == 0) {
-            header('Location: ./src/template/admin.php ');
+            return "admin";
         }
         if (strcmp($db[$i]->login,$login) == 0 && strcmp($db[$i]->password, $password) == 0 && strcmp($db[$i]->role,"joueur") == 0) {
-            header('Location: ./src/template/joueur.php ');   
+            return "joueur";
         }
     }
-    
 }
 
 ?>

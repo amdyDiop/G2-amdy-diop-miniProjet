@@ -1,15 +1,15 @@
 <?php
 session_start();
-if(empty( $_SESSION['user']))
-    header('Location: ../../index.php');
+
+if (empty($_SESSION['user']))
+    header('Location: ../../../index.php');
 echo 'prenom:' . $_SESSION['user']->prenom . '<br>';
 echo 'nom:' . $_SESSION['user']->nom . '<br>';
 echo 'role:' . $_SESSION['user']->role . '<br>';
-
 echo '<img  class="logo" src=" ' . $_SESSION['user']->photo . '" >';
 if (!empty($_POST['deconnexion'])) {
     session_destroy();
-    header('Location: ../../index.php');
+    header('Location: ../../../index.php');
 
 }
 ?>
@@ -18,7 +18,7 @@ if (!empty($_POST['deconnexion'])) {
 <head>
     <title>Joueur </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="../../assets/css/miniProjet.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
 </head>
 <?php
 ?>
