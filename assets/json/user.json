@@ -4,7 +4,7 @@
     "role": "joueur",
     "nom": "diop",
     "prenom": "amdy",
-    "photo": "../../assets/Images/user/amdy diop.jpeg"
+    "photo": "../../../assets/Images/user/amdy diop.jpeg"
 
 }, {
     "login": "admin",
@@ -12,7 +12,7 @@
     "role": "admin",
     "nom": "diop",
     "prenom": "amdy",
-    "photo": "../../assets/Images/user/amdy.jpg"
+    "photo": "../../../assets/Images/user/amdy.JPG"
 
 
 }]
