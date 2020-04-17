@@ -4,6 +4,7 @@
 session_start();
 $error = "";
 $_SESSION['user'] = [];
+$_SESSION['url'] = "listeJoueur.php";
 include ('src/controller/fonction.php');
 $_SESSION['nom'] = "amdy";
 if (!empty($_POST['connexion'])) {
@@ -46,20 +47,19 @@ if (!empty($_POST['connexion'])) {
         <div class="login">
             <div class="loginHeader">Login Form</div>
             <div class="loginContent">
-                <form action="" method="POST">
-
+                <form  name ="connection" action="" method="POST">
                     <input class="inputLogin" type="text" name="login" placeholder=" Login">
                     <div class="errorLog"> <?= $error ?></div>
                     <input class="inputPassword" type="password" name="password" placeholder=" Password">
                     <div class="errorPassword"> <?= $error ?></div>
-                    <input class="submit" type="submit" value="Connexion" name="connexion">
+                    <input class="submit" type="submit" value="Connexion" name="connexion" onclick="connnexion()">
                     <a class="inscrir" href="src/template/joueur/inscription.php">S'inscrire pour jouer? </a>
                 </form>
-
             </div>
         </div>
     </div>
 </div>
+<script src="assets/js/fonction.js"></script>
 </body>
 
 </html>

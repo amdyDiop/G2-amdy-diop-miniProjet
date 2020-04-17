@@ -254,9 +254,12 @@ li a {
     text-decoration: none;
 }
 
-li a.active {
+a.active {
     background-color: green;
-    color: #aeaeae;
+    width: 2%;
+    height: 12px;
+    border: groove;
+    color: #48ae52;
 }
 
 li a:hover:not(.active) {
