@@ -254,7 +254,8 @@ li a {
     text-decoration: none;
 }
 
-a.active {
+li a.active {
+>>>>>>> 600bd6e3448ec6df40bf8bc07310e388ed2cc192
     background-color: green;
     width: 2%;
     height: 12px;
