@@ -29,8 +29,7 @@ if (isset($_POST['prenom'])) {
         $db = json_encode($db);
         file_put_contents('../../../assets/json/user.json', $db);
         $objet = json_decode(json_encode($objet), FALSE);
-        $_SESSION['user'] = $objet;
-        header('Location: joueur.php');
+        header('Location: ../../../index.php');
 
 
     }
