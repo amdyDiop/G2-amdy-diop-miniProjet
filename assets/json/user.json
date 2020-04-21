@@ -5,7 +5,8 @@
     "role": "joueur",
     "nom": "diop",
     "prenom": "amdy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/amdy diop.jpeg"
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdy diop.jpeg",
+    "score": 234
   },
   {
     "login": "admin",
@@ -13,7 +14,9 @@
     "role": "admin",
     "nom": "diop",
     "prenom": "amdy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/amdy.JPG"
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdy.JPG",
+    "score": 0
+
   },
   {
     "login": "mamadou84",
@@ -21,7 +24,9 @@
     "role": "admin",
     "nom": "mbaye",
     "prenom": "mamadou",
-    "photo": "..\/..\/..\/assets\/Images\/user\/mamadou84.png"
+    "photo": "..\/..\/..\/assets\/Images\/user\/mamadou84.png",
+    "score": 0
+
   },
   {
     "login": "douwane",
@@ -29,15 +34,49 @@
     "role": "admin",
     "nom": "wane",
     "prenom": "boy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/douwane.png"
+    "photo": "..\/..\/..\/assets\/Images\/user\/douwane.png",
+    "score": 0
+
   },
   {
-    "login": "amdya",
+  "login": "lamine",
+  "password": "cohorte3",
+  "role": "joueur",
+  "nom": "diop",
+  "prenom": "amdy",
+  "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png",
+  "score": 212
+
+},
+  {
+    "login": "cheikh",
+    "password": "papa5877a",
+    "role": "joueur",
+    "nom": "ndiaye",
+    "prenom": "cheikh",
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png",
+    "score": 333
+
+  },
+  {
+    "login": "astou",
     "password": "papa5877a",
     "role": "joueur",
     "nom": "diop",
-    "prenom": "amdy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png"
+    "prenom": "astou",
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png",
+    "score": 3453
+
+  },
+  {
+    "login": "alioune",
+    "password": "papa5877a",
+    "role": "joueur",
+    "nom": "diouf",
+    "prenom": "alioun",
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png",
+    "score": 1454
+
   },
   {
     "login": "fatou",
@@ -45,6 +84,8 @@
     "role": "joueur",
     "nom": "diop",
     "prenom": "fatou",
-    "photo": "..\/..\/..\/assets\/Images\/user\/fatou.png"
+    "photo": "..\/..\/..\/assets\/Images\/user\/fatou.png",
+    "score": 22545
+
   }
 ]

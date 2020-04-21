@@ -3,6 +3,7 @@ session_start();
 $error = "";
 $_SESSION['url'] = "listeJoueur.php";
 include ('src/controller/fonction.php');
+include ('src/controller/joueurController.php');
 $_SESSION['nom'] = "amdy";
 if (!empty($_POST['connexion'])) {
     if (isset($_POST['login']) && isset($_POST['password'])) {
@@ -15,6 +16,7 @@ if (!empty($_POST['connexion'])) {
                 header('Location: ./src/template/admin/admin.php ');
             } elseif (strcmp(getRole($login, $password), "joueur") == 0) {
                 $_SESSION['user'] = getUser($login, $password);
+                $_SESSION['top5']=top5();
                 header('Location: ./src/template/joueur/joueur.php ');
             }
         } else {

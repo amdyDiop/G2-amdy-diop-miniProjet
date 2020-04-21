@@ -1,6 +1,8 @@
 <?php
 session_start();
-if(empty($_SESSION['user']))
+$_SESSION['url'] = "topScore.php";
+
+if (empty($_SESSION['user']))
     header('Location: ../../../index.php');
 
 if (!empty($_POST['deconnexion'])) {
@@ -8,8 +10,15 @@ if (!empty($_POST['deconnexion'])) {
     header('Location: ../../../index.php');
 
 }
+include ('../../controller/joueurController.php');
+if (isset($_GET['page'])) {
+    if ($_GET['page'] == "topScore") {
+        $_SESSION['url'] = "topScore.php";
+    } elseif ($_GET['page'] == "meilleur") {
+        $_SESSION['url'] = "meilleur.php";
+    }
+}
 ?>
-
 
 
 <!DOCTYPE html>
@@ -31,9 +40,9 @@ if (!empty($_POST['deconnexion'])) {
             <div class="headerAdmin">
                 <div class="contentHeader">
                     <div class="Imgdiv">
-                        <img class="joueurImgheader" src="<?=$_SESSION['user']->photo?>">
+                        <img class="joueurImgheader" src="<?= $_SESSION['user']->photo ?>">
                     </div>
-                    <div class="usernameJoueur"><?= $_SESSION['user']->prenom.' '.$_SESSION['user']->nom ?></div>
+                    <div class="usernameJoueur"><?= $_SESSION['user']->prenom . ' ' . $_SESSION['user']->nom ?></div>
                     <div class="texteheader1">
                         BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ
                     </div>
@@ -47,7 +56,13 @@ if (!empty($_POST['deconnexion'])) {
             </div>
             <div class="contentjoueur">
             </div>
-            <div class="score"></div>
+            <div class="score">
+                <ul>
+                    <li> <a href="joueur.php?page=topScore">Top score </a> </li>
+                    <li>  <a href="joueur.php?page=meilleur">Mon meilleur score </a>  </li>
+                </ul>
+            <?php include($_SESSION['url']) ?>
+            </div>
         </div>
     </div>
 </body>
