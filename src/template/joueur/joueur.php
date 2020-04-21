@@ -1,35 +1,54 @@
 <?php
 session_start();
-
-if (empty($_SESSION['user']))
+if(empty($_SESSION['user']))
     header('Location: ../../../index.php');
-echo 'prenom:' . $_SESSION['user']->prenom . '<br>';
-echo 'nom:' . $_SESSION['user']->nom . '<br>';
-echo 'role:' . $_SESSION['user']->role . '<br>';
-echo '<img  class="logo" src=" ' . $_SESSION['user']->photo . '" >';
+
 if (!empty($_POST['deconnexion'])) {
     session_destroy();
     header('Location: ../../../index.php');
 
 }
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <title>Joueur </title>
+    <title> Admin </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
 </head>
-<?php
-?>
-
 <body>
-<div class="content">
-    <form action="" method="post">
-        <input class="submit" type="submit" value="Décoonnexion" name="deconnexion">
-    </form>
-
-</div>
+<div class="global">
+    <div class="header">
+        <img class="logo" src="../../../assets/Images/logo-QuizzSA.png" alt="logo quiz">
+        Le plaisir de jouer
+    </div>
+    <div class="content">
+        <div class="globalAdmin">
+            <div class="headerAdmin">
+                <div class="contentHeader">
+                    <div class="Imgdiv">
+                        <img class="joueurImgheader" src="<?=$_SESSION['user']->photo?>">
+                    </div>
+                    <div class="usernameJoueur"><?= $_SESSION['user']->prenom.' '.$_SESSION['user']->nom ?></div>
+                    <div class="texteheader1">
+                        BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ
+                    </div>
+                    <div class="texteheader2">
+                        JOUER ET TESTER VOTRE NIVEAU DE CULTURE GÉNÉRALE
+                    </div>
+                    <form method="post">
+                        <input class="deconnexionJoueur" type="submit" value="Déconnexion" name="deconnexion">
+                    </form>
+                </div>
+            </div>
+            <div class="contentjoueur">
+            </div>
+            <div class="score"></div>
+        </div>
+    </div>
 </body>
-
 </html>

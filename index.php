@@ -1,9 +1,6 @@
 <?php
-
-
 session_start();
 $error = "";
-$_SESSION['user'] = [];
 $_SESSION['url'] = "listeJoueur.php";
 include ('src/controller/fonction.php');
 $_SESSION['nom'] = "amdy";
@@ -14,6 +11,7 @@ if (!empty($_POST['connexion'])) {
         if (connex($login, $password) == 1) {
             if (strcmp(getRole($login, $password), "admin") == 0) {
                 $_SESSION['user'] = getUser($login, $password);
+                echo 'admin';
                 header('Location: ./src/template/admin/admin.php ');
             } elseif (strcmp(getRole($login, $password), "joueur") == 0) {
                 $_SESSION['user'] = getUser($login, $password);
@@ -47,7 +45,7 @@ if (!empty($_POST['connexion'])) {
         <div class="login">
             <div class="loginHeader">Login Form</div>
             <div class="loginContent">
-                <form  name ="connection" action="" method="POST">
+                <form  name="connection" action="" method="POST">
                     <input class="inputLogin" type="text" name="login" placeholder=" Login">
                     <div class="errorLog"> <?= $error ?></div>
                     <input class="inputPassword" type="password" name="password" placeholder=" Password">

@@ -134,7 +134,7 @@ a {
 
 /**-----------------------------------------------css admin const---------------------------------------------------*/
 .globalAdmin {
-    margin-top: -9%;
+    margin-top: -9.7%;
     margin-left: 3%;
     margin-right: 3%;
     background-color: #f2f2f2;
@@ -143,7 +143,7 @@ a {
 
 .headerAdmin {
     width: 100%;
-    height: 66px;
+    height: 75px;
     background-color: #51bfd0;
     text-transform: uppercase;
     color: white;
@@ -649,3 +649,83 @@ input:focus:invalid {
     padding: 0.3em;
 }
 
+/*----------------------------------------------------- JOUEUR ____________________________________________________________________________*/
+.texteheader1{
+    height: 15px;
+    margin-left: 16.6%;
+    width: 65%;
+    line-height: 22px;
+    text-align: center;
+    font-size: 22px;
+
+}
+.texteheader2{
+    height: 15px;
+    padding-top: 2%;
+    margin-left: 5.9%;
+    width: 78%;
+    line-height: 12px;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+.deconnexionJoueur {
+    border-radius: 3%;
+    float: right;
+    margin-right: 1.5%;
+    margin-top: -3.9%;
+    width: 14%;
+    height: 30px;
+    text-transform: none;
+    line-height: 23px;
+    background-color: #3addd5;
+    color: #f8f5f5;
+}
+
+.joueurImgheader {
+    padding: .5%;
+    margin-left: -10%;
+    border-radius: 50%;
+    width: 62px;
+    height: 62px;
+}
+.contentHeader{
+    width: 100%;
+    height: 70px;
+
+}
+.Imgdiv{
+    float: left;
+    height: 52px;
+    margin-left: -1%;
+    width: 7.5%;
+}
+
+.usernameJoueur{
+   float: left;
+    margin-left:-9% ;
+    margin-top: 3.5%;
+    height: 9px;
+    width: 12%;
+    font-size: 12px;
+}
+.contentjoueur{
+    float: left;
+    background-color: white;
+    margin-top: 1%;
+    width: 66%;
+    margin-left: 2%;
+    height:410px;
+    border:solid #1a8faa;
+    border-radius: 2%;
+}
+.score{
+    float: right;
+    background-color: white;
+    margin-right: 1%;
+    margin-top: 5%;
+    width: 28%;
+    height:353px;
+    border:groove;
+}
