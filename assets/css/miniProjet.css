@@ -143,13 +143,13 @@ a {
 
 .headerAdmin {
     width: 100%;
-    height: 75px;
-    background-color: #51bfd0;
-    text-transform: uppercase;
-    color: white;
-    line-height: 70px;
-    font-style: normal;
-    font-size: 24px;
+height: 70px;
+background-color: #51bfd0;
+text-transform: uppercase;
+color: white;
+line-height: 70px;
+font-style: normal;
+font-size: 24px;
 }
 
 .deconnexion {
@@ -306,9 +306,14 @@ li a:hover:not(.active) {
     float: left;
     background-color: white;
     width: 45%;
-    height: 428px;
+    height: 437px;
 }
-
+.rightContent .td{
+    font-size: 2px;
+}
+.upercase{
+    text-transform:uppercase;
+}
 .textListJoueur {
     margin-top: 3%;
     margin-left: 18%;
@@ -323,13 +328,11 @@ li a:hover:not(.active) {
     margin-left: 8%;
     margin-right: 8%;
     text-align: center;
-    font-size: 21px;
     border: solid;
     border-radius: 3%;
     border-width: 1px;
     border-color: #51bfd0;
     width: 85%;
-    height: 344px
 }
 table{
     width: 100%;
@@ -337,9 +340,23 @@ table{
     font-family: "myriad pro", serif;
 }
 .suivant{
+    text-align: center;
     border-radius: 1.4%;
     float: right;
     margin-right: 9%;
+    margin-top: 1%;
+    width: 24%;
+    height: 30px;
+    text-transform: none;
+    line-height: 23px;
+    background-color: #3addd5;
+    color: #f8f5f5;
+}
+.precedent{
+    text-align: center;
+    border-radius: 1.4%;
+    float: left;
+    margin-left: 9%;
     margin-top: 1%;
     width: 24%;
     height: 30px;

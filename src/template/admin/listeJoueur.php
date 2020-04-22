@@ -1,4 +1,3 @@
-
 <div class="rightContent">
     <div class="textListJoueur">
         Liste des joueurs par score
@@ -8,58 +7,25 @@
             <th> Nom</th>
             <th>Prenom</th>
             <th> score</th>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>344</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>4683</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>4383</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>3456</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>476</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>4734</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>4534</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>345</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>43</td>
-            </tr>
-            <tr>
-                <td>dfg</td>
-                <td>dfg</td>
-                <td>34464</td>
-            </tr>
+            <?php
+            $taille = count($_SESSION['joueurs']);
+if (isset($_GET['liste'])){
 
+    if (  $_SESSION['page']<=ceil( $taille /14)-1)
+        $_SESSION['page']++;
+}
+
+            if (isset($_GET['listeprecedent'])){
+
+                if (  $_SESSION['page']>1)
+                    $_SESSION['page']--;
+            }
+
+            pagination($_SESSION['joueurs'],14,$_SESSION['page'],$taille);
+            ?>
         </table>
     </div>
-    <input class="suivant" type="submit" value="Suivant" name="suivant">
+     <a   class="suivant" href="admin.php?liste=<?=$_SESSION['page']?>">suivant</a>
+    <a   class="precedent" href="admin.php?listeprecedent=<?=$_SESSION['page']?>">précedant</a>
+
 </div>

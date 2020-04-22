@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('../../controller/fonction.php');
+include('../../controller/joueurController.php');
+
 $error = "";
 $errorFile = "";
 if (isset($_POST['prenom'])) {
@@ -34,6 +36,9 @@ if (isset($_POST['prenom'])) {
 
     }
 }
+
+//creation de fosuser
+//fosUser();
 ?>
 
 

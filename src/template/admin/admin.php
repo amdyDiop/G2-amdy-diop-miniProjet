@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(empty($_SESSION['user']))
     header('Location: ../../../index.php');
 
@@ -24,9 +25,11 @@ if (isset($_GET['page'])) {
     }
 
 }
+if (isset($_GET['liste']))
 
 
 include('../../controller/fonction.php');
+include('../../controller/joueurController.php');
 $error = "";
 $errorFile = "";
 if (isset($_POST['prenom'])) {
@@ -62,6 +65,7 @@ if (isset($_POST['prenom'])) {
 
     }
 }
+$_SESSION['joueurs']= getJoueur();
 
 ?>
 

@@ -2,6 +2,7 @@
 session_start();
 $error = "";
 $_SESSION['url'] = "listeJoueur.php";
+$_SESSION['page']=1;
 include ('src/controller/fonction.php');
 include ('src/controller/joueurController.php');
 $_SESSION['nom'] = "amdy";
