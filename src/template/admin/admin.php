@@ -146,14 +146,44 @@ $_SESSION['joueurs']= getJoueur();
 <script>
 var i = 1; /* Set Global Variable i */
 function increment(){
-i += 1; /* Function for automatic increment of field's "Name" attribute. */
+i += 1;
 }
 function addInput(divName) {
+    var champ ="champ"+i;
          var newdiv = document.createElement('div');
-         var champ = "champ"+i;
-          newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\"><label class=\"label\" for=\"typeReponse\""+i+">Réponse"+i+"</label>  <input class=\"labelReponse\" type=\"text\" name=\"Reponse\""+i+" > <input type=\"checkbox\" name=\"repnseCheck\""+i+"><input  class=\"radio\" type=\"radio\" name= \"radio\""+i+"> <button class=\"delete\" onClick=\"suprimer('champ'+i');\"></button> </div>";
-          document.getElementById(divName).appendChild(newdiv);
-          increment()
+         var valeur= document.getElementById('option').value;
+
+    if(valeur==="multiple"){
+        newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\">" +
+            "<label class=\"label\" for=\"typeReponse"+i+"\">Réponse"+i+"</label>" +
+            "<input class=\"labelReponse\" type=\"text\" name=\"Reponse"+i+"\" >" +
+            " <input type=\"checkbox\" name=\"repnseCheck"+i+"\">" +
+            "<input  class=\"radio\" type=\"radio\" name= \"radio"+i+"\">" +
+            " <button class=\"delete\" onClick=\"suprimer('champ"+i+"');\"></button> </div>";
+        document.getElementById(divName).appendChild(newdiv);
+        increment()
+    }
+   else if(valeur==="simple"){
+        newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\">" +
+            "<label class=\"label\" for=\"typeReponse"+i+"\">Réponse"+i+"</label>" +
+            "<input class=\"labelReponse\" type=\"text\" name=\"Reponse"+i+"\" >" +
+            "<input  class=\"radio\" type=\"radio\" name= \"radio"+i+"\">" +
+            " <button class=\"delete\" onClick=\"suprimer('champ"+i+"');\"></button> </div>";
+        document.getElementById(divName).appendChild(newdiv);
+        increment()
+    }
+    else if(valeur==="texte"){
+        newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\">" +
+            "<label class=\"label\" for=\"reponse \">Réponse</label>" +
+            "<textarea  class=\"area\" name=\"reponse\"></textarea>"+
+            " <button class=\"delete\" onClick=\"suprimer('champ"+i+"');\"></button> </div>";
+        document.getElementById(divName).appendChild(newdiv);
+        increment()
+    }
+
+     else {
+     alert('le type de réponse est obligatoire  ');
+     }
 }
 function suprimer(elementId) {
     var element = document.getElementById(elementId);

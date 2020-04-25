@@ -568,7 +568,9 @@ input[type="radio" i] {
     margin-top: 2%;
     height: 67px;
 }
-
+textarea{
+    background-color:  #f7f7f7;
+}
 .nbQuestionNew {
     margin-top: 2%;
     height: 40px;
@@ -579,6 +581,7 @@ input[type="radio" i] {
     margin-top: 2%;
     height: 10px;
     float: right;
+
 }
 
 .positionLabelQuestion {
@@ -591,14 +594,14 @@ input[type="radio" i] {
 
 .cadreInterne [type="number" i] {
     margin-top: -1%;
-    color: #5f5f5f;
+    background-color: #f7f7f7;
     height: 30px;
     width: 15%;
     margin-right: 50%;
 }
 
 .cadreInterne [type="text" i] {
-    color: #5f5f5f;
+    background-color: #f7f7f7;
     margin-top: -2%;
     width: 55%;
     height: 32px;
@@ -607,7 +610,7 @@ input[type="radio" i] {
 
 .cadreInterne select {
     margin-top: -2.5%;
-    color: #5f5f5f;
+    background-color: #f7f7f7;
     width: 59%;
     height: 42px;
     margin-left: -10%;
@@ -642,13 +645,21 @@ input[type="radio" i] {
     width: 13%;
     height: 26px;
     margin-left: -3%;
-
     padding: 0.5px;
     top: .05px;
     left: -2.5px;
     float: left;
 }
 
+.area{
+    background-color: #f7f7f7;
+    width: 65%;
+    height: 70px;
+    padding: 0.5px;
+    top: .05px;
+    left: -2.5px;
+    float: left;
+}
 .delete {
     background-image: url(../Images/Icônes/ic-supprimer.png);
     background-repeat: no-repeat;

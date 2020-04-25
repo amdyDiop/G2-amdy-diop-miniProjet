@@ -4,7 +4,7 @@
         <form action="" method="post">
                 <div class="questionNew">
                     <div class="positionLabelQuestion"> Question</div> 
-                    <textarea name="question" id="question" cols="52" rows="4"></textarea>
+                    <textarea  name="question" id="question" cols="52" rows="4"></textarea>
                 </div>
                
                 <div class="nbQuestionNew">
@@ -12,15 +12,17 @@
                     <input class="nbPoint" type="number" name="points" value="">
                 </div>
                 <div class="nbQuestionNew">
-                    <label class="label" for="points">Type de réponse</label> 
-                    <select  name="points" value="">                       
-                        <option value="">TESTE</option>
-                        <option value="">TES</option>
-                        <option value="">TSET</option>
-                    </select> 
+                    <label class="label" for="points">Type de réponse</label>
+                        <select  id="option" >
+                            <option value="">Donnez le type de réponse</option>
+                            <option value="multiple">Multiple</option>
+                            <option value="simple">Choix Simple</option>
+                            <option value="texte"> Choix Texte</option>
+                        </select>
                     <input  class="addInpute" type="button" value="" onClick="addInput('newInput');">
                 </div>
                 <div id="newInput">
+
 
                 </div>
             <input class="suivant" type="submit" value="Enregister">
