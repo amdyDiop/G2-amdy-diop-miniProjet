@@ -11,23 +11,23 @@ if (!empty($_POST['deconnexion'])) {
 }
 
 if (isset($_GET['page'])) {
-    if($_GET['page']=="listeQuestion"){
-        $_SESSION['url'] = "listeQuestion.php";
+    switch ($_GET['page']) {
+        case 'listeQuestion':
+            $_SESSION['url'] = "listeQuestion.php";
+            break;
+        case 'newAdmin':
+            $_SESSION['url'] = "newAdmin.php";
+            break;
+        case 'listeJoueur':
+            $_SESSION['url'] = "listeJoueur.php";
+            break;
+        case 'newQuestion':
+            $_SESSION['url'] = "newQuestion.php";
+            break;
+     
     }
-    else if($_GET['page']=="newAdmin"){
-        $_SESSION['url'] = "newAdmin.php";
-    }
-    else if($_GET['page']=="listQuestion"){
-        $_SESSION['url'] = "listQuestion.php";
-    }
-    else if($_GET['page']=="newQuestion"){
-        $_SESSION['url'] = "newQuestion.php";
-    }
-
 }
 if (isset($_GET['liste']))
-
-
 include('../../controller/fonction.php');
 include('../../controller/joueurController.php');
 $error = "";
@@ -110,8 +110,8 @@ $_SESSION['joueurs']= getJoueur();
                     <ul>
 
                         <li class="navBar">
-                                <a class="" href="admin.php?page=listeQuestion"> Liste Question
-                                    <div class="iconListe"></div>
+                                <a href="admin.php?page=listeQuestion" > Liste Question
+                                    <div  class="iconListe"></div>
                                 </a>
                         </li>
                         <li class="navBar">
@@ -144,6 +144,21 @@ $_SESSION['joueurs']= getJoueur();
 </body>
 <script src="../../../assets/js/fonction.js"></script>
 <script>
+var i = 1; /* Set Global Variable i */
+function increment(){
+i += 1; /* Function for automatic increment of field's "Name" attribute. */
+}
+function addInput(divName) {
+         var newdiv = document.createElement('div');
+         var champ = "champ"+i;
+          newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\"><label class=\"label\" for=\"typeReponse\""+i+">Réponse"+i+"</label>  <input class=\"labelReponse\" type=\"text\" name=\"Reponse\""+i+" > <input type=\"checkbox\" name=\"repnseCheck\""+i+"><input  class=\"radio\" type=\"radio\" name= \"radio\""+i+"> <button class=\"delete\" onClick=\"suprimer('champ'+i');\"></button> </div>";
+          document.getElementById(divName).appendChild(newdiv);
+          increment()
+}
+function suprimer(elementId) {
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
     function previewFile() {
         const preview = document.querySelector('.addminImg');
         const file = document.querySelector('input[type=file]').files[0];
