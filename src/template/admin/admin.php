@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(empty($_SESSION['user']))
+if (empty($_SESSION['user']))
     header('Location: ../../../index.php');
 
 if (!empty($_POST['deconnexion'])) {
@@ -24,11 +24,11 @@ if (isset($_GET['page'])) {
         case 'newQuestion':
             $_SESSION['url'] = "newQuestion.php";
             break;
-     
+
     }
 }
 if (isset($_GET['liste']))
-include('../../controller/fonction.php');
+    include('../../controller/fonction.php');
 include('../../controller/joueurController.php');
 $error = "";
 $errorFile = "";
@@ -65,7 +65,7 @@ if (isset($_POST['prenom'])) {
 
     }
 }
-$_SESSION['joueurs']= getJoueur();
+$_SESSION['joueurs'] = getJoueur();
 
 ?>
 
@@ -83,7 +83,7 @@ $_SESSION['joueurs']= getJoueur();
 <body>
 <div class="global">
     <div class="header">
-         <img class="logo" src="../../../assets/Images/logo-QuizzSA.png" alt="logo quiz">
+        <img class="logo" src="../../../assets/Images/logo-QuizzSA.png" alt="logo quiz">
         Le plaisir de jouer
     </div>
     <div class="content">
@@ -91,7 +91,7 @@ $_SESSION['joueurs']= getJoueur();
             <div class="headerAdmin">
                 <div class="texteAdmin">créer et paramétrer vos quizz
                     <form method="post">
-                    <input class="deconnexion" type="submit" value="Déconnexion" name="deconnexion">
+                        <input class="deconnexion" type="submit" value="Déconnexion" name="deconnexion">
 
                     </form>
                 </div>
@@ -100,34 +100,34 @@ $_SESSION['joueurs']= getJoueur();
             <div class="menu">
                 <div class="headerMenu">
                     <div class="divUI">
-                      <?php echo  '<img class="userImg" src="'. $_SESSION['user']->photo .'" alt="user">'?>
+                        <?php echo '<img class="userImg" src="' . $_SESSION['user']->photo . '" alt="user">' ?>
                     </div>
-                    <div class="nom"> <?=$_SESSION['user']->prenom?></div>
-                    <div class="prenom"><?=$_SESSION['user']->nom?></div>
+                    <div class="nom"> <?= $_SESSION['user']->prenom ?></div>
+                    <div class="prenom"><?= $_SESSION['user']->nom ?></div>
 
                 </div>
                 <div class="menuItem">
                     <ul>
 
                         <li class="navBar">
-                                <a href="admin.php?page=listeQuestion" > Liste Question
-                                    <div  class="iconListe"></div>
-                                </a>
+                            <a href="admin.php?page=listeQuestion"> Liste Question
+                                <div class="iconListe"></div>
+                            </a>
                         </li>
                         <li class="navBar">
-                                <a href="admin.php?page=newAdmin" > Créer Admin
-                                    <div class="iconAdd"></div>
-                                </a>
+                            <a href="admin.php?page=newAdmin"> Créer Admin
+                                <div class="iconAdd"></div>
+                            </a>
                         </li>
                         <li class="navBar">
-                                <a href="admin.php?page=listeJoueur" > Liste joueur
-                                    <div class="iconListeActive"></div>
-                                </a>
+                            <a href="admin.php?page=listeJoueur"> Liste joueur
+                                <div class="iconListeActive"></div>
+                            </a>
                         </li>
                         <li class="navBar">
-                                <a href="admin.php?page=newQuestion"> Créer Questions
-                                    <div class="iconAdd"></div>
-                                </a>
+                            <a href="admin.php?page=newQuestion"> Créer Questions
+                                <div class="iconAdd"></div>
+                            </a>
                         </li>
 
                     </ul>
@@ -144,65 +144,90 @@ $_SESSION['joueurs']= getJoueur();
 </body>
 <script src="../../../assets/js/fonction.js"></script>
 <script>
-var i = 1; /* Set Global Variable i */
-function increment(){
-i += 1;
-}
-function addInput(divName) {
-    var champ ="champ"+i;
-         var newdiv = document.createElement('div');
-         var valeur= document.getElementById('option').value;
 
-    if(valeur==="multiple"){
-        newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\">" +
-            "<label class=\"label\" for=\"typeReponse"+i+"\">Réponse"+i+"</label>" +
-            "<input class=\"labelReponse\" type=\"text\" name=\"Reponse"+i+"\" >" +
-            " <input type=\"checkbox\" name=\"repnseCheck"+i+"\">" +
-            "<input  class=\"radio\" type=\"radio\" name= \"radio"+i+"\">" +
-            " <button class=\"delete\" onClick=\"suprimer('champ"+i+"');\"></button> </div>";
-        document.getElementById(divName).appendChild(newdiv);
-        increment()
-    }
-   else if(valeur==="simple"){
-        newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\">" +
-            "<label class=\"label\" for=\"typeReponse"+i+"\">Réponse"+i+"</label>" +
-            "<input class=\"labelReponse\" type=\"text\" name=\"Reponse"+i+"\" >" +
-            "<input  class=\"radio\" type=\"radio\" name= \"radio"+i+"\">" +
-            " <button class=\"delete\" onClick=\"suprimer('champ"+i+"');\"></button> </div>";
-        document.getElementById(divName).appendChild(newdiv);
-        increment()
-    }
-    else if(valeur==="texte"){
-        newdiv.innerHTML = "<div id=\"champ"+i+"\" class=\"nbQuestionNew\">" +
-            "<label class=\"label\" for=\"reponse \">Réponse</label>" +
-            "<textarea  class=\"area\" name=\"reponse\"></textarea>"+
-            " <button class=\"delete\" onClick=\"suprimer('champ"+i+"');\"></button> </div>";
-        document.getElementById(divName).appendChild(newdiv);
-        increment()
+    function emptyQuestion() {
+        var question = document.forms['newQuestion']['question'].value;
+        var point = document.forms['newQuestion']['point'].value;
+        var select = document.forms['newQuestion']['select'].value;
+        if (question === "") {
+            alert('champs question  obligatoire');
+            return false;
+        }
+        if (point < 1 || point === "") {
+            alert('champs  point obligatoir et supérieur ou égal à 1');
+            return false;
+        }
+        if (select === "") {
+            alert('champs type de réponse obligatoire');
+            return false;
+        }
+        for (j = 1; j <=i; j++) {
+            alert(document.forms['newQuestion']['reponse' + i + ''].value)
+        }
     }
 
-     else {
-     alert('le type de réponse est obligatoire  ');
-     }
-}
-function suprimer(elementId) {
-    var element = document.getElementById(elementId);
-    element.parentNode.removeChild(element);
-}
+    var i = 1; /* Set Global Variable i */
+    function increment() {
+        i += 1;
+    }
+
+    function decreement() {
+        i -= 1;
+    }
+
+    function addInput(divName) {
+        var champ = "champ" + i;
+        var newdiv = document.createElement('div');
+        var valeur = document.getElementById('select').value;
+        if (valeur === "multiple") {
+            newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
+                "<label class=\"label\" for=\"reponse" + i + "\">Réponse" + i + "</label>" +
+                "<input class=\"labelReponse\" type=\"text\" name=\"reponse" + i + "\" >" +
+                " <input type=\"checkbox\" name=\"repnseCheck" + i + "\">" +
+                " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
+            document.getElementById(divName).appendChild(newdiv);
+            increment()
+        } else if (valeur === "simple") {
+            i = 1;
+            newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
+                "<label class=\"label\" for=\"typeReponse" + i + "\">Réponse" + i + "</label>" +
+                "<input class=\"labelReponse\" type=\"text\" name=\"Reponse" + i + "\" >" +
+                "<input  class=\"radio\" type=\"radio\" name= \"radio\">" +
+                " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
+            document.getElementById(divName).appendChild(newdiv);
+            increment()
+        } else if (valeur === "texte") {
+            if (i <= 1) {
+                newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
+                    "<label class=\"label\" for=\"reponse \">Réponse</label>" +
+                    "<textarea  class=\"area\" name=\"reponse\"></textarea>" +
+                    " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
+                document.getElementById(divName).appendChild(newdiv);
+                increment()
+            }
+        } else {
+            alert('le type de réponse est obligatoire  ');
+        }
+    }
+
+    function suprimer(elementId) {
+        var element = document.getElementById(elementId);
+        element.parentNode.removeChild(element);
+    }
+
     function previewFile() {
         const preview = document.querySelector('.addminImg');
         const file = document.querySelector('input[type=file]').files[0];
         const reader = new FileReader();
-
         reader.addEventListener("load", function () {
             // convert image file to base64 string
             preview.src = reader.result;
         }, false);
-
         if (file) {
             reader.readAsDataURL(file);
         }
     }
+
     function isEmpty() {
         // var errorPrenom = document.getElementById('errorPrenom');
         //var errorNom = document.getElementById('errorNom');

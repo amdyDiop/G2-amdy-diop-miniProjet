@@ -104,7 +104,6 @@ if (isset($_POST['prenom'])) {
         const preview = document.querySelector('.joueurImg');
         const file = document.querySelector('input[type=file]').files[0];
         const reader = new FileReader();
-
         reader.addEventListener("load", function () {
             // convert image file to base64 string
             preview.src = reader.result;
@@ -161,10 +160,7 @@ if (isset($_POST['prenom'])) {
         /*if(regex!=="png"){
             alert("seul les formats  png  ou jpeg sont autorisé");
             return false;
-
         }*/
-
-
     }
 </script>
 

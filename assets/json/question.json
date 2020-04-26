@@ -1,17 +1,11 @@
 [{
     "question": "",
     "type": "",
-    "point": "",
+    "point": 0,
     "nombre_de_reponse": "",
     "reponses": [{
             "reponse": "",
-            "etat"
+            "bonneReponse": ""
         }
-
-
-
-
-    ],
-    "question": "",
-    "question": "",
+    ]
 }]
