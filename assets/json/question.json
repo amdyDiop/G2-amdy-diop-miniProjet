@@ -1,11 +1,32 @@
-[{
-    "question": "",
-    "type": "",
-    "point": 0,
-    "nombre_de_reponse": "",
-    "reponses": [{
-            "reponse": "",
-            "bonneReponse": ""
-        }
+[
+  {
+    "question": "lsgdg",
+    "type": "multiple",
+    "point": "5",
+    "reponses": [
+      {
+        "reponse": "tt",
+        "etat": "false"
+      }
     ]
-}]
+  },
+  {
+    "question": "qui est amdy diop",
+    "type": "multiple",
+    "point": "45",
+    "reponses": [
+      {
+        "reponse": "un fou",
+        "etat": "true"
+      },
+      {
+        "reponse": "un g\u00e9nie",
+        "etat": "true"
+      },
+      {
+        "reponse": "un com\u00e9dien",
+        "etat": "false"
+      }
+    ]
+  }
+]

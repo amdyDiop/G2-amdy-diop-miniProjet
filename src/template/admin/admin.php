@@ -1,15 +1,12 @@
 <?php
 session_start();
-
-if (empty($_SESSION['user']))
+if (empty($_SESSION['user'])) {
     header('Location: ../../../index.php');
-
+}
 if (!empty($_POST['deconnexion'])) {
     session_destroy();
     header('Location: ../../../index.php');
-
 }
-
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
         case 'listeQuestion':
@@ -24,12 +21,12 @@ if (isset($_GET['page'])) {
         case 'newQuestion':
             $_SESSION['url'] = "newQuestion.php";
             break;
-
     }
 }
-if (isset($_GET['liste']))
-    include('../../controller/fonction.php');
-include('../../controller/joueurController.php');
+if (isset($_GET['liste'])) {
+    include '../../controller/fonction.php';
+}
+include '../../controller/joueurController.php';
 $error = "";
 $errorFile = "";
 if (isset($_POST['prenom'])) {
@@ -38,8 +35,8 @@ if (isset($_POST['prenom'])) {
     } else {
         $error = "";
 //1. strrchr renvoie l'extension avec le point (« . »).
-//2. substr(chaine,1) ignore le premier caractère de chaine.
-//3. strtolower met l'extension en minuscules.
+        //2. substr(chaine,1) ignore le premier caractère de chaine.
+        //3. strtolower met l'extension en minuscules.
         $extension = strtolower(substr(strrchr($_FILES['file']['name'], '.'), 1));
         $chemin = "../../../assets/Images/user/{$_POST['login']}.{$extension}";
         $resultat = move_uploaded_file($_FILES['file']['tmp_name'], $chemin);
@@ -49,7 +46,7 @@ if (isset($_POST['prenom'])) {
             "role" => 'admin',
             "nom" => $_POST['nom'],
             "prenom" => $_POST['prenom'],
-            "photo" => $chemin
+            "photo" => $chemin,
         ];
         $files = '../../../assets/json/user.json';
         $db = file_get_contents($files);
@@ -57,7 +54,7 @@ if (isset($_POST['prenom'])) {
         array_push($db, $objet);
         $db = json_encode($db);
         file_put_contents('../../../assets/json/user.json', $db);
-        $objet = json_decode(json_encode($objet), FALSE);
+        $objet = json_decode(json_encode($objet), false);
         $_SESSION['user'] = $objet;
         if ($resultat) {
             header('Location: admin.php');
@@ -66,20 +63,62 @@ if (isset($_POST['prenom'])) {
     }
 }
 $_SESSION['joueurs'] = getJoueur();
-
+if (isset($_POST['question'])) {
+    $reponses = [];
+    $question = [];
+    $champGenerer = count($_POST) - 3;
+    $question['question'] = $_POST['question'];
+    $question['type'] = $_POST['typeReponse'];
+    $question['point'] = $_POST['point'];
+    for ($i = 0; $i < $champGenerer - 1; $i++) {
+        if ($_POST['typeReponse'] === "multiple") {
+            if ( isset($_POST['reponse' . ($i + 1) . ''] ) && $_POST['reponse' . ($i + 1) . ''] != "" )  {
+                if (isset($_POST["checkboxes" . ($i + 1) . ""])) {
+                    $reponses[$i]['reponse'] = $_POST['reponse' . ($i + 1) . ''];
+                    $reponses[$i]['etat'] = "true";;
+                } else {
+                    if (isset($_POST['reponse' . ($i + 1) . ''])) {
+                        $reponses[$i]['reponse'] = $_POST['reponse' . ($i + 1) . ''];
+                        $reponses[$i]['etat'] = "false";
+                    }
+                }
+            }
+        }
+        if ($_POST['typeReponse'] === "simple") {
+            if ($_POST['reponse' . ($i + 1) . ''] != "") {
+                if (!empty($_POST['radio'] == "radio" . ($i + 1) . "")) {
+                    $reponses[$i]['reponse'] = $_POST['reponse' . ($i + 1) . ''];
+                    $reponses[$i]['etat'] = "true";;
+                } else {
+                    $reponses[$i]['reponse'] = $_POST['reponse' . ($i + 1) . ''];
+                    $reponses[$i]['etat'] = "false";;
+                }
+            }
+        }
+    }
+    if ($_POST['typeReponse'] === "texte") {
+        $reponses[$i]['reponse'] = $_POST['texteReponse'];
+        $reponses[$i]['etat'] = "true";;
+    }
+    $question['reponses'] = $reponses;
+    $files = '../../../assets/json/question.json';
+    $db = file_get_contents($files);
+    $db = json_decode($db, true);
+    array_push($db, $question);
+    $db = json_encode($db);
+    file_put_contents('../../../assets/json/question.json', $db);
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <title> Admin </title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
-</head>
-<?php
+    <link rel="stylesheet"  href="../../../assets/js/adminController.js">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-?>
+</head>
 <body>
 <div class="global">
     <div class="header">
@@ -96,7 +135,6 @@ $_SESSION['joueurs'] = getJoueur();
                     </form>
                 </div>
             </div>
-
             <div class="menu">
                 <div class="headerMenu">
                     <div class="divUI">
@@ -104,11 +142,9 @@ $_SESSION['joueurs'] = getJoueur();
                     </div>
                     <div class="nom"> <?= $_SESSION['user']->prenom ?></div>
                     <div class="prenom"><?= $_SESSION['user']->nom ?></div>
-
                 </div>
                 <div class="menuItem">
                     <ul>
-
                         <li class="navBar">
                             <a href="admin.php?page=listeQuestion"> Liste Question
                                 <div class="iconListe"></div>
@@ -129,156 +165,18 @@ $_SESSION['joueurs'] = getJoueur();
                                 <div class="iconAdd"></div>
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </div>
             <?php
             if (!empty($_SESSION['url'])) {
-                include($_SESSION['url']);
+                include $_SESSION['url'];
             }
             ?>
         </div>
     </div>
-
 </body>
 <script src="../../../assets/js/fonction.js"></script>
-<script>
+<script src="../../../assets/js/adminController.js"></script>
 
-    function emptyQuestion() {
-        var question = document.forms['newQuestion']['question'].value;
-        var point = document.forms['newQuestion']['point'].value;
-        var select = document.forms['newQuestion']['select'].value;
-        if (question === "") {
-            alert('champs question  obligatoire');
-            return false;
-        }
-        if (point < 1 || point === "") {
-            alert('champs  point obligatoir et supérieur ou égal à 1');
-            return false;
-        }
-        if (select === "") {
-            alert('champs type de réponse obligatoire');
-            return false;
-        }
-        for (j = 1; j <=i; j++) {
-            alert(document.forms['newQuestion']['reponse' + i + ''].value)
-        }
-    }
-
-    var i = 1; /* Set Global Variable i */
-    function increment() {
-        i += 1;
-    }
-
-    function decreement() {
-        i -= 1;
-    }
-
-    function addInput(divName) {
-        var champ = "champ" + i;
-        var newdiv = document.createElement('div');
-        var valeur = document.getElementById('select').value;
-        if (valeur === "multiple") {
-            newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
-                "<label class=\"label\" for=\"reponse" + i + "\">Réponse" + i + "</label>" +
-                "<input class=\"labelReponse\" type=\"text\" name=\"reponse" + i + "\" >" +
-                " <input type=\"checkbox\" name=\"repnseCheck" + i + "\">" +
-                " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
-            document.getElementById(divName).appendChild(newdiv);
-            increment()
-        } else if (valeur === "simple") {
-            i = 1;
-            newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
-                "<label class=\"label\" for=\"typeReponse" + i + "\">Réponse" + i + "</label>" +
-                "<input class=\"labelReponse\" type=\"text\" name=\"Reponse" + i + "\" >" +
-                "<input  class=\"radio\" type=\"radio\" name= \"radio\">" +
-                " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
-            document.getElementById(divName).appendChild(newdiv);
-            increment()
-        } else if (valeur === "texte") {
-            if (i <= 1) {
-                newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
-                    "<label class=\"label\" for=\"reponse \">Réponse</label>" +
-                    "<textarea  class=\"area\" name=\"reponse\"></textarea>" +
-                    " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
-                document.getElementById(divName).appendChild(newdiv);
-                increment()
-            }
-        } else {
-            alert('le type de réponse est obligatoire  ');
-        }
-    }
-
-    function suprimer(elementId) {
-        var element = document.getElementById(elementId);
-        element.parentNode.removeChild(element);
-    }
-
-    function previewFile() {
-        const preview = document.querySelector('.addminImg');
-        const file = document.querySelector('input[type=file]').files[0];
-        const reader = new FileReader();
-        reader.addEventListener("load", function () {
-            // convert image file to base64 string
-            preview.src = reader.result;
-        }, false);
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
-
-    function isEmpty() {
-        // var errorPrenom = document.getElementById('errorPrenom');
-        //var errorNom = document.getElementById('errorNom');
-        //var errorLogin = document.getElementById('errorLogin');
-        //var errorPassword = document.getElementById('errorPassword');
-        //var errorCpassword = document.getElementById('errorCpassword');
-        //var errorFile = document.getElementById('errorFile');
-        var prenom = document.forms['myForm'].prenom.value;
-        var nom = document.forms['myForm'].nom.value;
-        var login = document.forms['myForm'].login.value;
-        var password = document.forms['myForm'].password.value;
-        var cpassword = document.forms['myForm'].cpassword.value;
-        var file = document.forms['myForm'].file.value;
-        if (!prenom.replace(/\s+/, '').length) {
-            alert('Le champ Prenom ne peut être vide');
-            return false;
-        }
-        if (!nom.replace(/\s+/, '').length) {
-
-            alert('Le champ nom ne peut être vide');
-            return false;
-        }
-        if (!login.replace(/\s+/, '').length) {
-            alert('Le champ login ne peut être vide');
-            return false;
-        }
-        if (!password.replace(/\s+/, '').length) {
-            alert('Le champ password ne peut être vide');
-            return false;
-        }
-        if (!cpassword.replace(/\s+/, '').length) {
-            alert('Le champ confirmation ne peut être vide');
-            return false;
-        }
-        if (cpassword !== password) {
-            alert(' les deux mot de passe ne conrrespondent  pas');
-            return false;
-        }
-        var fileName = document.forms['myForm'].file.value;
-        regex = new RegExp("(.*?)\.(gpeg|png)$");
-        if (fileName === "") {
-            alert(' Le champ avatar ne peut être vide');
-            return false;
-        }
-        /*if(regex!=="png"){
-            alert("seul les formats  png  ou jpeg sont autorisé");
-            return false;
-
-        }*/
-
-
-    }
-</script>
 </html>

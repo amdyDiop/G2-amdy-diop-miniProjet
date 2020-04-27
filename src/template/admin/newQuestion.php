@@ -21,10 +21,8 @@
                     <input  class="addInpute" type="button" value="" onClick="addInput('newInput');">
                 </div>
                 <div id="newInput">
-
                 </div>
             <input class="suivant" type="submit" value="Enregister" >
         </form>
     </div>
 </div>
-
