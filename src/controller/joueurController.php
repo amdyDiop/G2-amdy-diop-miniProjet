@@ -57,20 +57,14 @@ function pagination($tab, $nombreParPage, $page, $taille)
         $_SESSION['pageCourant'] = $page;  // si non  elle prend 1ouvreloe bou  ma
     }
     $_SESSION['debut'] = ($_SESSION['pageCourant'] - 1) * $nombreParPage; // de but de l'achiffage par page
-
     for ($i = $_SESSION['debut']; ($i < $nombreParPage * $_SESSION['pageCourant'] &&$i< $taille); $i++ ){
-
             echo '<tr>';
             echo '<td class="upercase">' . $tab[$i]['nom'] . '</td>';
             echo '<td>' . $tab[$i]['prenom'] . '</td>';
             echo '<td>' .$tab[$i]['score'] . '</td>';
             echo '<tr>';
         }
-
-
-
 }
-
 // fonction pour créer des faux utilisatueur qui nous servirons de teste
 function fosUser(){
    for ($i=0;$i<100;$i++){

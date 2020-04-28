@@ -5,7 +5,6 @@ $_SESSION['url'] = "listeJoueur.php";
 $_SESSION['page']=1;
 include ('src/controller/fonction.php');
 include ('src/controller/joueurController.php');
-$_SESSION['nom'] = "amdy";
 if (!empty($_POST['connexion'])) {
     if (isset($_POST['login']) && isset($_POST['password'])) {
         $login = $_POST['login'];
@@ -13,7 +12,6 @@ if (!empty($_POST['connexion'])) {
         if (connex($login, $password) == 1) {
             if (strcmp(getRole($login, $password), "admin") == 0) {
                 $_SESSION['user'] = getUser($login, $password);
-                echo 'admin';
                 header('Location: ./src/template/admin/admin.php ');
             } elseif (strcmp(getRole($login, $password), "joueur") == 0) {
                 $_SESSION['user'] = getUser($login, $password);

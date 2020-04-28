@@ -5,7 +5,8 @@
     "role": "joueur",
     "nom": "diop",
     "prenom": "amdy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/amdy diop.jpeg"
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdy diop.jpeg",
+    "score": 34
   },
   {
     "login": "admin",
@@ -21,7 +22,8 @@
     "role": "admin",
     "nom": "mbaye",
     "prenom": "mamadou",
-    "photo": "..\/..\/..\/assets\/Images\/user\/mamadou84.png"
+    "photo": "..\/..\/..\/assets\/Images\/user\/mamadou84.png",
+    "score": 345
   },
   {
     "login": "douwane",
@@ -29,7 +31,8 @@
     "role": "admin",
     "nom": "wane",
     "prenom": "boy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/douwane.png"
+    "photo": "..\/..\/..\/assets\/Images\/user\/douwane.png",
+    "score": 234
   },
   {
     "login": "amdya",
@@ -37,6 +40,7 @@
     "role": "joueur",
     "nom": "diop",
     "prenom": "amdy",
-    "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png"
+    "photo": "..\/..\/..\/assets\/Images\/user\/amdya.png",
+    "score": 245
   }
 ]

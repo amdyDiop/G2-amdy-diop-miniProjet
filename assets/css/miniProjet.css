@@ -381,8 +381,8 @@ table {
     width: 58%;
     height: 428px;
 }
-
 .borderIn {
+    overflow: auto;
     margin-left: 5%;
     border: solid;
     border-radius: 3%;
@@ -392,7 +392,6 @@ table {
     height: 344px;
     font-family: "myriad pro", serif;
 }
-
 .nbQuestion {
     position: absolute;
     margin-left: 16%;
@@ -442,7 +441,7 @@ table {
 .question {
     margin-left: 1.5%;
     width: 98%;
-    font-size: 17px;
+    font-size: 21px;
     height: auto;
 }
 
@@ -459,7 +458,7 @@ input[type="checkbox" i] {
     background-color: #51bfd0;
     width: 8%;
     font-size: 12px;
-    height: 10px;
+    height: 12px;
     color: #51bfd0;
     margin: 5px -14px -5% 8px;
     padding: 0.5px;
@@ -472,7 +471,7 @@ input[type="radio" i] {
     background-color: #51bfd0;
     width: 8%;
     font-size: 12px;
-    height: 10px;
+    height: 12px;
     color: #51bfd0;
     margin: 5px -14px -5% 8px;
     padding: 0.5px;
@@ -482,10 +481,10 @@ input[type="radio" i] {
 }
 
 .inputReponse {
-    width: 28%;
+    width: 55%;
     margin-left: 5%;
     font-size: 12px;
-    height: 22px;
+    height: 27px;
 }
 
 .container {

@@ -1,52 +1,54 @@
 <div class="contentListQuestion">
     <div class="textNbQuestion">
         <div class="line">
-       <div class="texte">Nbre question/jeu</div>
+            <div class="texte">Nbre question/jeu</div>
             <input class="nbQuestion" type="number" value="" name="nbQuestion">
             <input class="ok" type="button" value="ok" name="oko">
-
         </div>
     </div>
     <div class="borderIn">
-        <div class="questioncontent">
-            <div class="question">
-               1. Les langages Web
-            </div>
+        <?php
+        if (isset($_POST['suivant'])) {
+            if ( $_SESSION['Courantpage']*5<= $_SESSION['nbQuestions'])
+                $_SESSION['Courantpage']++;
+        }
+        if (isset($_POST['precedent'])) {
+            if ( $_SESSION['Courantpage']>1)
+                $_SESSION['Courantpage']--;
+        }
+        $_SESSION['nbQuestions']=count($_SESSION['question']);
+        //echo $_SESSION['nbQuestions'];
+        $_SESSION['questionParPage']=5;
+        $_SESSION['debutQuestion'] = ($_SESSION['Courantpage'] -1) * $_SESSION['questionParPage'];
 
-             <input class="inputCheckbox" type="checkbox" name=""  > HTML <br>
-            <input class="inputCheckbox" type="checkbox" name=""  > R <br>
-            <input class="inputCheckbox" type="checkbox" name=""  > JAVA <br>
-
-        </div>
-        <div class="questioncontent">
-            <div class="question">
-                2. D’où vient le Corona?
-            </div>
-            <input class="inputCheckbox" type="radio" name=""  > Italie <br>
-            <input class="inputCheckbox" type="radio" name=""  > Chine <br>
-        </div>
-        <div class="questioncontent">
-            <div class="question">
-                3. Quel terme définit langage qui s’adapte sur
-                Androïd et sur Ios?
-            </div>
-            <input class="inputReponse" type="text" name="reponse" >  <br>
-        </div>
-        <div class="questioncontent">
-            <div class="question">
-                4. Quelle est la première école de codage gratuite
-                au Sénégal?
-            </div>
-            <input class="inputCheckbox" type="radio" name=""  > Simplon <br>
-            <input class="inputCheckbox" type="radio" name=""  > Orange Digital Centere <br>
-        </div>
-        <div class="questioncontent">
-            <div class="question">
-                5. Les précurseurs de la révolution digitale
-            </div>
-            <input class="inputCheckbox" type="radio" name=""  > GAFAM <br>
-            <input class="inputCheckbox" type="radio" name=""  > CIA-FBI <br>
-        </div>
+        for ($i = $_SESSION['debutQuestion']; ($i < $_SESSION['questionParPage'] * $_SESSION['Courantpage'] && $i < $_SESSION['nbQuestions']); $i++) {
+            echo '<div class="questioncontent">';
+            echo '<div class="question">';
+            echo $i + 1 . ' . ' . $_SESSION['question'][$i]['question'] . '<br>';
+            echo '</div>';
+            for ($j = 0; $j < count($_SESSION['question'][$i]['reponses']); $j++) {
+                if ($_SESSION['question'][$i]['type'] == "multiple") {
+                    if ($_SESSION['question'][$i]['reponses'][$j]['etat'] == "true") {
+                        echo '<input class="inputCheckbox" type="checkbox" checked disabled="disabled" > ' . $_SESSION['question'][$i]['reponses'][$j]['reponse'] . '<br>';
+                    } else
+                        echo '<input class="inputCheckbox" type="checkbox" disabled="disabled" > ' . $_SESSION['question'][$i]['reponses'][$j]['reponse'] . '<br>';
+                }
+                if ($_SESSION['question'][$i]['type'] == "simple") {
+                    if ($_SESSION['question'][$i]['reponses'][$j]['etat'] == "true") {
+                        echo '<input class="inputCheckbox" type="radio" disabled="disabled" name="radio" checked > ' . $_SESSION['question'][$i]['reponses'][$j]['reponse'] . '<br>';
+                    } else
+                        echo '<input class="inputCheckbox" type="radio" disabled="disabled" name="radio"> ' . $_SESSION['question'][$i]['reponses'][$j]['reponse'] . '<br>';
+                }
+            }
+            if ($_SESSION['question'][$i]['type'] == "texte") {
+                echo '<input class="inputReponse" type="text" value="' . $_SESSION['question'][$i]['reponses'][0]['reponse'] . '" readonly><br>';
+            }
+            echo '</div>';
+        }
+        ?>
     </div>
-    <input class="suivant" type="submit" value="Suivant" name="suivant">
+    <form method="post">
+        <input class="suivant" type="submit" value="Suivant" name="suivant">
+        <input class="precedent" type="submit" value="Précédent" name="precedent">
+    </form>
 </div>
