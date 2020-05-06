@@ -683,7 +683,6 @@ textarea{
     color: #5f5f5f;
     height: 386px;
 }
-
 .sousTexte {
     color: #5f5f5f;
     width: 30%;
@@ -691,7 +690,6 @@ textarea{
     font-size: 12px;
     padding-left: 3%;
 }
-
 .texteInsc {
     color: #5f5f5f;
     width: 40%;
@@ -699,13 +697,11 @@ textarea{
     font-size: 22px;
     padding-left: 3%;
 }
-
 hr {
     float: left;
     width: 60%;
     background-color: #5f5f5f;
 }
-
 .addminImg {
     margin-top: -6%;
     float: right;
@@ -715,7 +711,6 @@ hr {
     height: 130px;
     border: groove #51bfd0;
 }
-
 .adminAdd {
     padding-left: 3%;
     float: left;
@@ -723,7 +718,6 @@ hr {
     width: 50%;
     height: 87%;
 }
-
 .texteAvatar {
     margin-right: 3%;
     margin-top: 1%;
@@ -732,19 +726,16 @@ hr {
     font-size: medium;
     width: 30%;
 }
-
 label {
     font-size: 82%;
     margin-bottom: 3%;
     width: 97%
 }
-
 .input {
     width: 100%;
     height: 8%;
     border-radius: 2%;
 }
-
 .inputfile {
     color: white;
     float: right;
@@ -753,7 +744,6 @@ label {
     border-radius: 2%;
     background-color: #51bfd0;
 }
-
 .buttonValider {
     margin-left: 23%;
     width: 45%;
@@ -762,10 +752,7 @@ label {
     border-radius: 2%;
     color: white;
 }
-
-
 /*------------------------------------------css new player-----------------------------------------------------------------------------------------*/
-
 .contentNewJoueur {
     margin-top: -11%;
     margin-left: 11%;
@@ -776,7 +763,6 @@ label {
     color: #5f5f5f;
     height: 519px;
 }
-
 .texteInscJoueur {
     margin-top: 2%;
     font-family: inherit;
@@ -786,7 +772,6 @@ label {
     font-size: 30px;
     padding-left: 3%;
 }
-
 .sousTextejoueur {
     color: #5f5f5f;
     width: 42%;
@@ -794,7 +779,6 @@ label {
     font-size: 16px;
     padding-left: 3%;
 }
-
 .inputJoueur {
     width: 110%;
     height: 11%;
@@ -803,13 +787,11 @@ label {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 .labelJoueur {
     font-size: 14px;
     margin-bottom: 10%;
     width: 99%;
 }
-
 .joueurImg {
     margin-top: -6%;
     float: right;

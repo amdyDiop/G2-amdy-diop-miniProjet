@@ -1,6 +1,8 @@
 <?php
 $error = "";
 $errorFile = "";
+
+//inscription administrateur
 if (isset($_POST['prenom'])) {
     if (existeLogin($_POST['login']) == 0) {
         $error = " login existe déja";
@@ -34,6 +36,9 @@ if (isset($_POST['prenom'])) {
 
     }
 }
+//fin inscription administrateur
+
+//add new question  administrateur
 if (isset($_POST['question'])) {
     $reponses = [];
     $question = [];
@@ -79,4 +84,12 @@ if (isset($_POST['question'])) {
     $db = json_encode($db);
     file_put_contents('../../../assets/json/question.json', $db);
 }
+//fin add  new question
+$files = '../../../assets/json/nombreDeQuestionParJeux.json';
+$nombreParJeux = file_get_contents($files);
+if (!empty($_POST['valider']))
+    {
+        file_put_contents($files,$_POST['nbQuestion']);
+        $nombreParJeux = file_get_contents($files);
+    }
 ?>

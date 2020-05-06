@@ -127,5 +127,50 @@
         "etat": "true"
       }
     ]
+  },
+  {
+    "question": "qui suis je ",
+    "type": "simple",
+    "point": "43",
+    "reponses": [
+      {
+        "reponse": "un fou",
+        "etat": "false"
+      },
+      {
+        "reponse": "un d\u00e9veleppeur",
+        "etat": "true"
+      }
+    ]
+  },
+  {
+    "question": "google.com",
+    "type": "multiple",
+    "point": "87",
+    "reponses": [
+      {
+        "reponse": "as",
+        "etat": "true"
+      },
+      {
+        "reponse": "sdh",
+        "etat": "false"
+      }
+    ]
+  },
+  {
+    "question": "sdfhj",
+    "type": "multiple",
+    "point": "8",
+    "reponses": [
+      {
+        "reponse": "dsffh",
+        "etat": "true"
+      },
+      {
+        "reponse": "dsfh",
+        "etat": "true"
+      }
+    ]
   }
 ]

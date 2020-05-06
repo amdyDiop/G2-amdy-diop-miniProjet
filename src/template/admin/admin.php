@@ -20,7 +20,10 @@ if (isset($_GET['page'])) {
             $_SESSION['url'] = "listeJoueur.php";
             break;
         case 'newQuestion':
-            $_SESSION['url'] = "newQuestion.php";
+        $_SESSION['url'] = "newQuestion.php";
+        break;
+        case 'modifier_question':
+            $_SESSION['url'] = "modifierQuestion.php";
             break;
     }
 }
