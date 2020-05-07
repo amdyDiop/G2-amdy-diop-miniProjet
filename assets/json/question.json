@@ -62,10 +62,6 @@
         "etat": "false"
       },
       {
-        "reponse": ".xml",
-        "etat": "false"
-      },
-      {
         "reponse": ".php",
         "etat": "true"
       }
@@ -169,6 +165,25 @@
       },
       {
         "reponse": "dsfh",
+        "etat": "true"
+      }
+    ]
+  },
+  {
+    "question": "entre modou et becay qui est le plus fort",
+    "type": "simple",
+    "point": "12",
+    "reponses": [
+      {
+        "reponse": "modou",
+        "etat": "false"
+      },
+      {
+        "reponse": "becay",
+        "etat": "false"
+      },
+      {
+        "reponse": "meme niveau",
         "etat": "true"
       }
     ]
