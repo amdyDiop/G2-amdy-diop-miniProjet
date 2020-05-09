@@ -95,7 +95,6 @@ function questionRand($user)
     // chemin d'accé des questions
     $fileQuestion = 'assets/json/question.json';
     $nbquestion = file_get_contents($fileNbQuestion);
-    echo $nbquestion;
     $questions = file_get_contents($fileQuestion);
     $questions = json_decode($questions, true);
 
@@ -110,9 +109,22 @@ function questionRand($user)
             }
     }
    //var_dump($nonrepondue);
-    for ($i = 0; $i < $nbquestion; $i++) {
-        $valeur = random_int($i, count( $nonrepondue)-1);
-        $return[] = $questions[$valeur];
+    $i=0;
+    $return=[];
+
+   while ($i<$nbquestion) {
+       $teste=0;
+        $valeur = random_int(0, count($nonrepondue)-1);
+        for ($j = 0; $j < count($return); $j++) {
+            if (($nonrepondue[$valeur]['question']===$return[$j]['question'])){
+               $teste=1;
+               break;
+            }
+        }
+        if ($teste ==0){
+            $return[] = $nonrepondue[$valeur];
+            $i++;
+        }
     }
     return $return;
 }

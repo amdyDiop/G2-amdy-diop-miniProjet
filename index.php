@@ -2,7 +2,12 @@
 session_start();
 $error = "";
 $_SESSION['url'] = "listeJoueur.php";
+
+$_SESSION['jeux'] = "reponseQuestion.php";
+
 $_SESSION['page'] = 1;
+$_SESSION['score'] = 0;
+
 //pour la pagination des liste de questions
 $_SESSION['Courantpage'] = 1;
 // pour la pagintion des question dans le jeux

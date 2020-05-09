@@ -19,24 +19,25 @@
     ]
   },
   {
-    "question": "qui est diarra",
-    "type": "simple",
-    "point": "45",
+    "question": "qui est modou",
+    "type": "multiple",
+    "point": "5",
     "reponses": [
       {
-        "reponse": "un homme",
-        "etat": "false"
-      },
-      {
-        "reponse": "une fille",
+        "reponse": "un fou",
         "etat": "true"
       },
       {
-        "reponse": "une putte",
+        "reponse": "un genie",
         "etat": "false"
+      },
+      {
+        "reponse": "un con",
+        "etat": "true"
       }
     ]
   },
+
   {
     "question": "le qcm je fait dans quel langage",
     "type": "texte",
@@ -44,6 +45,39 @@
     "reponses": [
       {
         "reponse": "php et js",
+        "etat": "true"
+      }
+    ]
+  },
+  {
+    "question": "bindal ma dof bi en wolof",
+    "type": "texte",
+    "point": "45",
+    "reponses": [
+      {
+        "reponse": "dof bi",
+        "etat": "true"
+      }
+    ]
+  },
+  {
+    "question": "lakh en wolof",
+    "type": "texte",
+    "point": "45",
+    "reponses": [
+      {
+        "reponse": "laax",
+        "etat": "true"
+      }
+    ]
+  },
+  {
+    "question": "amdy baye fall la   en wolof",
+    "type": "texte",
+    "point": "45",
+    "reponses": [
+      {
+        "reponse": "Amdi Baay Faal la",
         "etat": "true"
       }
     ]

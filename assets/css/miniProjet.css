@@ -956,7 +956,29 @@ input:focus:invalid {
     width: 18%;
     font-size: 12px;
     height: 22px;
-    margin: 5px -14px -5% 8px;
+    margin: 5px -14px -5% 10px;
+    padding: 0.5px;
+    top: .05px;
+    left: .5px;
+    line-height: 0;
+}
+.reponse .radio{
+    background-color: #51bfd0;
+    width: 18%;
+    font-size: 12px;
+    height: 22px;
+    margin: 5px -14px -5% -5px;
+    padding: 0.5px;
+    top: .05px;
+    left: .5px;
+    line-height: 0;
+}
+.reponse .checkbox{
+    background-color: #51bfd0;
+    width: 18%;
+    font-size: 12px;
+    height: 22px;
+    margin: 5px -14px -5% -5px;
     padding: 0.5px;
     top: .05px;
     left: .5px;
@@ -988,6 +1010,19 @@ input:focus:invalid {
     background-color: #3addd5;
     color: #f8f5f5;
 }
+.reponse .quitter{
+    text-align: center;
+    border-radius: 1.4%;
+    float: left;
+    margin-left: 20%;
+    margin-top: 22%;
+    width: 24%;
+    height: 30px;
+    text-transform: none;
+    line-height: 23px;
+    background-color: #dd241e;
+    color: #f8f5f5;
+}
 .score {
     float: right;
     background-color: white;
@@ -999,7 +1034,7 @@ input:focus:invalid {
 }
 
 .score table {
-    font-size: 25px;
+    font-size: 18px;
     text-align: left;
     margin-left: 2%;
 }
@@ -1047,3 +1082,16 @@ input:focus:invalid {
     font-family: "Agency FB", fantasy;
     text-align: center;
 }
+.valide {
+    background-image: url("../Images/Icônes/valide.png");
+    float: left;
+    width: 15px;
+    height: 23px;
+}
+.invalide {
+    background-image: url("../Images/Icônes/invalide.png");
+    float: left;
+    width: 23px;
+    height: 23px;
+}
+

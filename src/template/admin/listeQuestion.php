@@ -1,5 +1,6 @@
 <div class="contentListQuestion">
     <div class="textNbQuestion">
+
         <div class="line">
             <div class="texte">Nbre question/jeu</div>
             <form name="ok" method="post" onsubmit="return fixNbQuestion();">
