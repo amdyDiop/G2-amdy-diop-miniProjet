@@ -1,9 +1,6 @@
 <?php
 session_start();
 $_SESSION['url'] = "topScore.php";
-$filenbQuestion = '../../../assets/json/nombreDeQuestionParJeux.json';
-$_SESSION['nbQuestionsParJeux'] = file_get_contents($filenbQuestion);
-//$_SESSION['question'] =$db;
 if (empty($_SESSION['user']))
     header('Location: ../../../index.php');
 if (isset($_POST['deconnexion'])) {
@@ -18,31 +15,6 @@ if (isset($_GET['page'])) {
         $_SESSION['url'] = "meilleur.php";
     }
 }
-//declaration question par page pour le jeux
-$_SESSION['questionParPage'] = 1;
-// traitement lors de la click sur le bouton suivant
-if (isset($_POST['suivant'])) {
-   traitementQuestion();
-    if ($_SESSION['pageCourant'] * $_SESSION['questionParPage'] < count($_SESSION['tabReponses']))
-        $_SESSION['pageCourant']++;
-}
-// traitement lors de la click sur le bouton précédent
-if (isset($_POST['precedent'])) {
-    traitementQuestion();
-    if ($_SESSION['pageCourant'] > 1)
-        $_SESSION['pageCourant']--;
-}
-if (isset($_POST['terminer'])) {
-    traitementQuestion();
-    $_SESSION['jeux'] = "resultat.php";
-}
-// traitement lors de la click sur le bouton suivant
-if (isset($_POST['reJouer'])) {
-    include('../../controller/nouvellePartieController.php');
-}
-//echo count($_POST['modifier']);
-//echo $_SESSION['nbQuestions'];
-$_SESSION['debutQuestion'] = ($_SESSION['pageCourant'] - 1) * $_SESSION['questionParPage'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -76,7 +48,14 @@ $_SESSION['debutQuestion'] = ($_SESSION['pageCourant'] - 1) * $_SESSION['questio
                     </form>
                 </div>
             </div>
-            <?php include($_SESSION['jeux']) ?>
+            <div class="contentjoueur">
+                <div class="felicitation feu">
+                    Félicitation vous avez trouvé toutes les questions de ce jeu,
+                    votre score est : <?=$_SESSION['user']->score ?> pts.
+                    D'autres questions seront disponibles. Merci pour votre visite
+                </div>
+
+            </div>
             <div class="score">
                 <ul>
                     <li><a href="joueur.php?page=topScore">Top score </a></li>

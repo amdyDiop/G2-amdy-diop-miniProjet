@@ -74,15 +74,10 @@
                 echo '</div>';
             }
             echo '</div>';
-            if ($_SESSION['pageCourant'] == 1)
-                echo '<input class="suivant" type="submit" name="suivant" value="Suivant">';
-            else if ($_SESSION['pageCourant'] == $_SESSION['nbQuestionsParJeux']) {
-                echo '<input class="suivant" type="submit" name="terminer" value="Terminer">';
-                echo '<input class="precedent " type="submit" name="precedent" value="Précedent">';
-            } else {
-                echo '<input class="suivant" type="submit" name="suivant" value="Suivant">';
-                echo '<input class="precedent " type="submit" name="precedent" value="Précedent">';
-            }
+
+                echo '<input class="suivant" type="submit" name="reJouer" value="Nouvelle Partie">';
+
+
             //pour éliminer l'execution de cette code lors du chargement
             if($_SESSION['addScore']  ==1){
                 $_SESSION['addScore'] ++;
@@ -115,7 +110,7 @@
                 //mettre à jour la liste des scores
                 $_SESSION['top5'] = top5('../../../assets/json/user.json');
             }
-            echo '<div class="resultat">votre score est :'. $_SESSION['score'].' pts</div>';
+            echo '<div class="resultat">votre score est :'. $_SESSION['score'].'   pts</div>';
 
             ?>
         </form>

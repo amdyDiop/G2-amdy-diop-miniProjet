@@ -1,5 +1,6 @@
 <?php
 
+
 function top5($chemin)
 {
     $db = file_get_contents($chemin);
@@ -28,9 +29,6 @@ function top5($chemin)
     }
     return $top;
 }
-
-
-
 //fonction qui recupére un joueur en fonction de sont mot de passse et de son login
 function getJoueur()
 {
@@ -89,15 +87,11 @@ function fosUser()
     }
 }
 //fonction selection des question aleatoirement
-function questionRand($user)
+function questionRand($user,$cheminNbQuestion,$cheminQuestions,$redirection)
 {
     $nonrepondue = [];
-    //chemin d'accé nombre de question par jeux
-    $fileNbQuestion = 'assets/json/nombreDeQuestionParJeux.json';
-    // chemin d'accé des questions
-    $fileQuestion = 'assets/json/question.json';
-    $nbquestion = file_get_contents($fileNbQuestion);
-    $questions = file_get_contents($fileQuestion);
+    $nbquestion = file_get_contents($cheminNbQuestion);
+    $questions = file_get_contents($cheminQuestions);
     $questions = json_decode($questions, true);
     // var_dump($questions);
     for ($j = 0; $j < count($questions); $j++) {
@@ -113,9 +107,7 @@ function questionRand($user)
     $i=0;
     $return=[];
 if (count($nonrepondue)==0){
-    echo 'vous avez tous trouvez attender que l\'admin met à jour une question';
-    die();
-
+  header($redirection);
 }
    while ($i<$nbquestion) {
        $teste=0;

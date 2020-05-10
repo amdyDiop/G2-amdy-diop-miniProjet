@@ -1,11 +1,10 @@
 <?php
 session_start();
-
-if (empty($_SESSION['user'])) {
+if (empty($_SESSION['admin'])) {
     header('Location: ../../../index.php');
 }
-if (!empty($_POST['deconnexion'])) {
-    session_destroy();
+if (isset($_POST['deconnexionAdmin'])) {
+    unset($_SESSION['admin']);
     header('Location: ../../../index.php');
 }
 if (isset($_GET['page'])) {
@@ -30,7 +29,6 @@ if (isset($_GET['page'])) {
 if (isset($_GET['liste'])) {
     include '../../controller/fonction.php';
 }
-
 include '../../controller/joueurController.php';
 include '../../controller/adminController.php';
 $_SESSION['joueurs'] = getJoueur();
@@ -42,7 +40,6 @@ $_SESSION['question'] =$db;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <title> Admin </title>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
@@ -61,7 +58,7 @@ $_SESSION['question'] =$db;
             <div class="headerAdmin">
                 <div class="texteAdmin">créer et paramétrer vos quizz
                     <form method="post">
-                        <input class="deconnexion" type="submit" value="Déconnexion" name="deconnexion">
+                        <input class="deconnexion" type="submit" value="Déconnexion" name="deconnexionAdmin">
 
                     </form>
                 </div>
@@ -69,10 +66,10 @@ $_SESSION['question'] =$db;
             <div class="menu">
                 <div class="headerMenu">
                     <div class="divUI">
-                        <?php echo '<img class="userImg" src="' . $_SESSION['user']->photo . '" alt="user">' ?>
+                        <?php echo '<img class="userImg" src="' . $_SESSION['admin']->photo . '" alt="user">' ?>
                     </div>
-                    <div class="nom"> <?= $_SESSION['user']->prenom ?></div>
-                    <div class="prenom"><?= $_SESSION['user']->nom ?></div>
+                    <div class="nom"> <?= $_SESSION['admin']->prenom ?></div>
+                    <div class="prenom"><?= $_SESSION['admin']->nom ?></div>
                 </div>
                 <div class="menuItem">
                     <ul>
