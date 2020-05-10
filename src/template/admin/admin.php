@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['url'] = "listeJoueur.php";
 if (empty($_SESSION['admin'])) {
     header('Location: ../../../index.php');
 }

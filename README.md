@@ -9,7 +9,7 @@ Description :ce mini-projet est un jeu qui permet à un utilisateur de tester sa
 ------------------------------------------------------------------------------------------------------------------------------------------
 LIEN GITHUB:  https://github.com/amdyDiop/QCM_Amdy-Diop
 ------------------------------------------------------------------------------------------------------------------------------------------
-Site Web:      http://mini-projet-by-amdy-diop.alwaysdata.net/
+Site Web:      http://qcm-amdy-diop.alwaysdata.net/
 ------------------------------------------------------------------------------------------------------------------------------------------
 Default User:
                 login: amdy  password: cohorte3

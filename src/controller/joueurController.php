@@ -61,7 +61,7 @@ function pagination($tab, $nombreParPage, $page, $taille)
         echo '<tr>';
         echo '<td class="upercase">' . $tab[$i]['nom'] . '</td>';
         echo '<td>' . $tab[$i]['prenom'] . '</td>';
-        echo '<td>' . $tab[$i]['score'] . '</td>';
+        echo '<td>' . $tab[$i]['score'] . ' pts</td>';
         echo '<tr>';
     }
 }
