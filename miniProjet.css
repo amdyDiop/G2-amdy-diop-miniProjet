@@ -32,14 +32,13 @@ body {
     padding-top: 10%;
     width: 100%;
     height: 437px;
-    background-image: url(../Images/img-bg.jpg);
+    background-image: url(/assets/Images/img-bg.jpg);
 }
 
 
 /*  login css   */
 
 .login {
-    padding-top: 0%;
     margin-left: 25%;
     margin-right: 25%;
     height: 306px;
@@ -66,7 +65,7 @@ body {
 .inputLogin {
     font-size: 15px;
     background-color: #e6e3e3;
-    background-image: url('../Images/Icones/ic-login.png');
+    background-image: url('assets/Images/Icones/ic-login.png');
     background-position: 95%;
     background-repeat: no-repeat;
     border: none;
@@ -81,7 +80,7 @@ body {
 .inputPassword {
     font-size: 15px;
     background-color: #e6e3e3;
-    background-image: url('../Images/Icones/ic-password.png');
+    background-image: url('assets/Images/Icones/ic-password.png');
     background-position: 95%;
     background-repeat: no-repeat;
     padding-left: 5%;
@@ -270,7 +269,7 @@ li a:hover:not(.active) {
     margin-top: 2%;
     margin-right: 5%;
     background-size: cover;
-    background-image: url("../../assets/Images/Icones/ic-ajout.png");
+    background-image: url("assets/Images/Icones/ic-ajout.png");
     background-repeat: no-repeat;
     float: right;
     width: 24px;
@@ -280,7 +279,7 @@ li a:hover:not(.active) {
 .iconListeActive {
     margin-top: 2%;
     margin-right: 5%;
-    background-image: url("../../assets/Images/Icones/ic-liste-active.png");
+    background-image: url("assets/Images/Icones/ic-liste-active.png");
     background-repeat: no-repeat;
     float: right;
     width: 24px;
@@ -290,7 +289,7 @@ li a:hover:not(.active) {
 .iconListe {
     margin-right: 5%;
     margin-top: 2%;
-    background-image: url("../../assets/Images/Icones/ic-liste.png");
+    background-image: url("assets/Images/Icones/ic-liste.png");
     background-repeat: no-repeat;
     float: right;
     width: 24px;
@@ -616,7 +615,7 @@ textarea{
 }
 
 .addInpute {
-    background-image: url(../Images/Icones/ic-ajout-reponse.png);
+    background-image: url(/assets/Images/Icones/ic-ajout-reponse.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 3%;
@@ -660,7 +659,7 @@ textarea{
     float: left;
 }
 .delete {
-    background-image: url(../Images/Icones/ic-supprimer.png);
+    background-image: url(/assets/Images/Icones/ic-supprimer.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 6%;
@@ -1083,13 +1082,13 @@ input:focus:invalid {
     text-align: center;
 }
 .valide {
-    background-image: url("../Images/Icones/valide.png");
+    background-image: url("assets/Images/Icones/valide.png");
     float: left;
     width: 15px;
     height: 23px;
 }
 .invalide {
-    background-image: url("../Images/Icones/invalide.png");
+    background-image: url("assets/Images/Icones/invalide.png");
     float: left;
     width: 23px;
     height: 23px;
@@ -1132,3 +1131,4 @@ input:focus:invalid {
     0   -8px 7px #973716,
     1px -9px 8px #451b0e;
 }
+

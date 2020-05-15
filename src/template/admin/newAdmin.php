@@ -38,8 +38,7 @@
                value="Créer compte">
     </form>
 
-      <img class="addminImg" src="" alt="user">
-
+      <img class="addminImg" src="./../../../assets/Images/user.png" alt="user">
     <div class="texteAvatar">avatar admin</div>
 
 

@@ -50,6 +50,8 @@ $_SESSION['debutQuestion'] = ($_SESSION['pageCourant'] - 1) * $_SESSION['questio
     <title> joueur </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
+    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="../../../assets/css/miniProjetTablette.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 768px)"  href="../../../assets/css/miniProjetportable.css"/>
 </head>
 <body>
 <div class="global">
@@ -80,7 +82,7 @@ $_SESSION['debutQuestion'] = ($_SESSION['pageCourant'] - 1) * $_SESSION['questio
             <div class="score">
                 <ul>
                     <li><a href="joueur.php?page=topScore">Top score </a></li>
-                    <li><a href="joueur.php?page=meilleur">Mon meilleur score </a></li>
+                    <li><a href="joueur.php?page=meilleur">Meilleur score </a></li>
                 </ul>
                 <?php include($_SESSION['url']) ?>
             </div>

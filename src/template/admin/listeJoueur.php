@@ -21,7 +21,7 @@ if (isset($_GET['liste'])){
                     $_SESSION['page']--;
             }
 
-            pagination($_SESSION['joueurs'],14,$_SESSION['page'],$taille);
+            pagination($_SESSION['joueurs'],13,$_SESSION['page'],$taille);
             ?>
         </table>
     </div>

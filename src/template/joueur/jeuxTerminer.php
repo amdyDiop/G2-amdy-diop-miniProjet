@@ -22,6 +22,7 @@ if (isset($_GET['page'])) {
     <title> joueur </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
+    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="../../../assets/css/miniProjetTablette.css"/>
 </head>
 <body>
 <div class="global">
@@ -52,7 +53,7 @@ if (isset($_GET['page'])) {
                 <div class="felicitation feu">
                     Félicitation vous avez trouvé toutes les questions de ce jeu,
                     votre score est : <?=$_SESSION['user']->score ?> pts.
-                    D'autres questions seront disponibles. Merci pour votre visite
+                    D'autres questions serons disponibles. Merci pour votre visite
                 </div>
 
             </div>

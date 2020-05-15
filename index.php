@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('src/controller/indexController.php');
+$_SESSION['Courantpage']=1;
+$_SESSION['page']=1;
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,6 +11,8 @@ include('src/controller/indexController.php');
     <title>Login </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="./assets/css/miniProjet.css">
+    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="./assets/css/miniProjetTablette.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 768px)"  href="./assets/css/miniProjetportable.css"/>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>

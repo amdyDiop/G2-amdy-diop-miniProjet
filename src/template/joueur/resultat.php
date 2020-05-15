@@ -23,15 +23,15 @@
                     if ($_SESSION['tabReponses'][$i]['type'] == "multiple") {
                       //  echo $_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] .'   vs   '.$_SESSION['tabReponses'][$i]['clicked'][$j] ;
                         if ($_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] == "true" && (isset($_SESSION['tabReponses'][$i]['clicked'][$j]) && $_SESSION['tabReponses'][$i]['clicked'][$j] === 1)) {
-                            echo '<img class="valide" src="../../../assets/Images/Icônes/valide.png" alt="">';
+                            echo '<img class="valide" src="../../../assets/Images/Icones/valide.png" alt="">';
                             echo ' <input class="radio " type="checkbox" checked disabled="disabled" > ' . $_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
                             //pour compter le nombre de reponse true et checked
                             $teste--;
                         } elseif ($_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] == "false" && (isset($_SESSION['tabReponses'][$i]['clicked'][$j]) && $_SESSION['tabReponses'][$i]['clicked'][$j] === 1)) {
-                            echo '<img class="valide" src="../../../assets/Images/Icônes/invalide.png" alt="">';
+                            echo '<img class="valide" src="../../../assets/Images/Icones/invalide.png" alt="">';
                             echo ' <input class="radio " type="checkbox" checked disabled="disabled" > ' . $_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
                         } elseif ($_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] == "true") {
-                            echo '<img class="valide" src="../../../assets/Images/Icônes/valide.png" alt="">';
+                            echo '<img class="valide" src="../../../assets/Images/Icones/valide.png" alt="">';
                             echo ' <input class="radio" type="checkbox"  disabled="disabled" > ' . $_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
                         } else
                             echo '<input class="checkbox" type="checkbox" disabled="disabled" > ' . $_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
@@ -39,15 +39,15 @@
                     if ($_SESSION['tabReponses'][$i]['type'] == "simple") {
                         //echo $_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] .'   vs   '.@$_SESSION['tabReponses'][$i]['clicked'];
                         if (($_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] == "true" && @$_SESSION['tabReponses'][$i]['clicked'] === $j)) {
-                            echo '<img class="valide" src="../../../assets/Images/Icônes/valide.png" alt="">';
+                            echo '<img class="valide" src="../../../assets/Images/Icones/valide.png" alt="">';
                             echo ' <input class="radio" type="radio" disabled="disabled" name="radio" checked > ' . @$_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
                             $scoreS +=$_SESSION['tabReponses'][$i]['point'];
                             $indiceTrouver[]= $i;
                         } else if ($_SESSION['tabReponses'][$i]['clicked'] == $j) {
-                            echo '<img class="valide" src="../../../assets/Images/Icônes/invalide.png" alt="">';
+                            echo '<img class="valide" src="../../../assets/Images/Icones/invalide.png" alt="">';
                             echo ' <input class="radio" type="radio" disabled="disabled" name="radio" checked> ' . @$_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
                         } elseif ($_SESSION['tabReponses'][$i]['reponses'][$j]['etat'] == "true") {
-                            echo '<img class="valide" src="../../../assets/Images/Icônes/valide.png" alt="">';
+                            echo '<img class="valide" src="../../../assets/Images/Icones/valide.png" alt="">';
                             echo ' <input class="radio" type="radio" disabled="disabled" name="radio" > ' . @$_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
                         } else
                             echo '<input class="inputCheckbox" type="radio" disabled="disabled" name="radio"> ' . @$_SESSION['tabReponses'][$i]['reponses'][$j]['reponse'] . '<br>';
@@ -60,14 +60,14 @@
                 }
                 if ($_SESSION['tabReponses'][$i]['type'] == "texte") {
                     if ($_SESSION['tabReponses'][$i]['reponses'][0]['reponse'] === @$_SESSION['tabReponses'][$i]['clicked'][0]) {
-                        echo '<img class="valide" src="../../../assets/Images/Icônes/valide.png" alt="">';
+                        echo '<img class="valide" src="../../../assets/Images/Icones/valide.png" alt="">';
                         echo '<input class="inputReponse" type="text" value="' . $_SESSION['tabReponses'][$i]['reponses'][0]['reponse'] . '" readonly><br>';
                         $scoreT +=$_SESSION['tabReponses'][$i]['point'];
                         $indiceTrouver[]= $i;
                     } else {
-                        echo '<img class="valide" src="../../../assets/Images/Icônes/valide.png" alt="">';
+                        echo '<img class="valide" src="../../../assets/Images/Icones/valide.png" alt="">';
                         echo '<input class="inputReponse" type="text" value="' . $_SESSION['tabReponses'][$i]['reponses'][0]['reponse'] . '" readonly><br>';
-                        echo '<img class="valide" src="../../../assets/Images/Icônes/invalide.png" alt="">';
+                        echo '<img class="valide" src="../../../assets/Images/Icones/invalide.png" alt="">';
                         echo '<input class="inputReponse" type="text" value="' . @$_SESSION['tabReponses'][$i]['clicked'][0] . '" readonly><br>';
                     }
                 }
@@ -75,7 +75,7 @@
             }
             echo '</div>';
 
-                echo '<input class="suivant" type="submit" name="reJouer" value="Nouvelle Partie">';
+                echo '<input class="suivant" type="submit" name="reJouer" value="rejouer ">';
 
 
             //pour éliminer l'execution de cette code lors du chargement

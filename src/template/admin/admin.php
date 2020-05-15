@@ -44,6 +44,8 @@ $_SESSION['question'] =$db;
 <head>
     <title> Admin </title>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
+    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="../../../assets/css/miniProjetTablette.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 768px)"  href="../../../assets/css/miniProjetportable.css"/>
     <link rel="stylesheet"  href="../../../assets/js/adminController.js">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 

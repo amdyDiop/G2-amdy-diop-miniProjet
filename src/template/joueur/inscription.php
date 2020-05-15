@@ -50,6 +50,8 @@ if (isset($_POST['prenom'])) {
     <title> Inscription</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
+    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="../../../assets/css/miniProjetTablette.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 768px)"  href="../../../assets/css/miniProjetportable.css"/>
 </head>
 <?php
 ?>
@@ -95,7 +97,7 @@ if (isset($_POST['prenom'])) {
                 <input onclick="return isEmpty()" type="submit" name="submit" class="buttonValider"
                        value="Créer compte">
             </form>
-            <img class="joueurImg" src="" alt="user">
+            <img class="joueurImg" src="../../../assets/Images/user.png" alt="user">
             <div class="texteAvatar">avatar du joueur</div>
         </div>
     </div>

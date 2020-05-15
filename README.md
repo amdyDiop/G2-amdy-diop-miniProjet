@@ -29,7 +29,6 @@ les principaux fonctionnalité du projet:
                                           le bouton suivant, Précédent et Quitter, qui permet de : 
                                           passé à la question suivante, revenir aux questions précédentes déjà répondues pour modifier sa réponse et de quitter le jeu . si ce dernier est activé sans avoir terminé le jeu, a, traitera que les questions répondues. À la fin du jeu le jour aura un résumé de la liste des questions répondues avec les bonnes réponses, les questions trouvées, faussé ou restée sans réponse qui seront considérées comme des réponses faussées.
                                           le score sera mis à jour s'il est supérieur à l'ancien ainsi que la liste des top 5 joueurs.
-                                          une autre bouton sera disponible pour faire une autre partie . 
-                                                                  
+                                          une autre bouton sera disponible pour faire une autre partie .                                       
 ------------------------------------------------------------------------------------------------------------------------------------------
 

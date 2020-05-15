@@ -4,7 +4,7 @@
         <form   action="" method="post"  name="newQuestion" onsubmit="return emptyQuestion();">
                 <div class="questionNew">
                     <div class="positionLabelQuestion"> Question</div> 
-                    <textarea  name="question" id="question" cols="52" rows="4"></textarea>
+                    <textarea  name="question" id="question" cols="16" rows="2"></textarea>
                 </div>
                 <div class="nbQuestionNew">
                     <label class="label" for="point">Nbre de Points</label>

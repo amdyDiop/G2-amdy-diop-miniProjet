@@ -41,6 +41,17 @@ function getJoueur()
             $joueurs[] = $db[$i];
         }
     }
+    for ($i = 0; $i < count($joueurs) - 1; $i++) {
+
+        for ($j = $i; $j < count($joueurs); $j++) {
+
+            if ($joueurs[$i]['score'] < $joueurs[$j]['score']) {
+                $temp = $joueurs[$i];
+                $joueurs[$i] = $joueurs[$j];
+                $joueurs[$j] = $temp;
+            }
+        }
+    }
     return $joueurs;
 }
 
@@ -76,7 +87,8 @@ function fosUser()
             "nom" => 'name' . $i,
             "prenom" => 'fName' . $i,
             "photo" => '../../../assets/Images/logo-QuizzSA.png',
-            "score" => $i + 100
+            "score" => $i + 100,
+            "repondue"=>[]
         ];
         $files = 'assets/json/user.json';
         $db = file_get_contents($files);
