@@ -64,7 +64,7 @@ $_SESSION['debutQuestion'] = ($_SESSION['pageCourant'] - 1) * $_SESSION['questio
             <div class="headerAdmin">
                 <div class="contentHeader">
                     <div class="Imgdiv">
-                        <img class="joueurImgheader" src="<?= $_SESSION['user']->photo ?>">
+                        <img class="joueurImgheader" src="<?=$_SESSION['user']->photo?>">
                     </div>
                     <div class="usernameJoueur"><?= $_SESSION['user']->prenom . ' ' . $_SESSION['user']->nom ?></div>
                     <div class="texteheader1">
